@@ -6,3 +6,112 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Fuggles', cursive;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #fff;
+    padding: 30px;
+}
+
+.header {
+    height: 95vh;
+    background-image: linear-gradient(
+        to left top,
+        rgba(68, 38, 204, 0.74),
+        rgba(12, 13, 210, 0.75)),
+        url(../img/AJlewFN6EZk.jpg);
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon( 0 0, 100% 0, 100% 80vh, 0 100%);
+    position: relative; /*El padre debe ser rel y el hijo abs (logo-box)*/
+}
+
+.logo-box {
+    position: absolute; /*El hijo debe ser abs y el padre (header) rel*/
+    top: 40px; /*Estas distancias se miden a partir de la referencia del elemento padre*/
+    left: 40px;
+}
+
+.logo {
+    height: 35px; /*El ancho no es necesario ponerlo, se escala en consecuencia al height*/
+}
+
+.logo:hover {
+    animation: moveInRight 4s ease-out;
+}
+
+.text-box {
+    position: absolute; /*El elemento padre (header) ya tiene el posicionamiento rel*/
+    /*Las sig medidas centran el inicio del elemento en las coordenadas indicadas, en relación con el padre*/
+    top: 45%;
+    left: 50%;
+    /*Ahora se debe transformar la caja para que el centro de la caja se ubique con las coordenadas*/
+    transform: translate(-50%,-50%); /*Se establecen las medidas en el eje x,y */
+    /* background-color: aqua; */
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+
+    /* backface-visibility: hidden; Soluciona el problema de que las animaciones se agiten */
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 25px;
+
+    animation-name: moveInLeft;
+    animation-duration: 4s;
+    animation-timing-function: ease-out;
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 19px;
+    
+    animation: moveInRight 4s ease-out;
+}
+
+@keyframes moveInLeft {
+    0% { /*Cuando la animación comienza*/
+        opacity: 0;
+        transform: translateX(-110px);
+    }
+    70% {
+        opacity: .4;
+        transform: translateX(20px);
+    }
+    100% { /*Cuando la animación finaliza*/
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    70% {
+        opacity: .4;
+        transform: translateX(-20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0px);
+    }
+}
