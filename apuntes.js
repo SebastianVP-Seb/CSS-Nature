@@ -33,6 +33,96 @@ animation-timing-function: cubic-bezier(1, 0, 0, 1); nuestra f personalizada
         transform: rotate(50deg);        Rotación
     }
 
+Las pseudoclases son un estado det de un selector (link, hover, visited)
+
+.btn:link,
+.btn:visited {
+    Para poner los estados juntos y que el btn visitado sea el mismo que cuando no ha sido clickeado
+}
+
+padding: 15px 40px; 1er valor: arriba y abajo   2do valor: derecha e izquierda.
+    Si se escriben 4 valores: 1arriba 2abajo 3izquierda 4derecha
+
+box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+    sombra en x | sombra en y | desenfoque rgba()
+
+La pseudoclase hace referencia al estado de un elemento
+
+Pseudoelementos: siempre se debe especicicar el content, aunque sea vacío; y el display (de preferencia
+    igual al elemento que se le quiere aplicar el after)
+
+z-index: -1; si dos elementos están encimados, z-index define cuál está detrás
+transform: scale(2); Veces que el elemento será más grande
+
+animation-fill-mode: backwards; la animación correrá al revés
+
+============ LOS TRES PILARES PARA ESCRIBIR HTML Y CSS ================
+
+1) responsive design (diseño receptivo) (el sitio web funcionará en calquier pantalla)
+    Uso correcto de unidades, vista en desktop y móvil
+2) código mantenible y escalable (limpio, fácil de entender, escalable a futuro, reutilizable)
+3) rendimiento web (rápido y pequeño en datos para que el usuario descargue menos datos)
+    Uso de Sass, reducir el uso de imágenes
+
+Al cargar un sitio web, el archivo CSS se ejecuta en dos partes 1: En estilo cascada (las declaraciones
+en conflicto se resulven) y 2: Procesar los valores CSS (ej de % a px (tamaños de pantalla)). Una vez
+ejecutados estos pasos, el CSS se almacena en CSSOM (CSS Object Model, similar al DOM del HTML; estos
+dos forman el RENDER TREE que rendereiza la pág (la muestra) el Navegador usa el Modelo de Formato Visula)
+y finalmente se renderiza el sitio web.
+
+CSS: Cascade Style Sheet.
+Cascada: Resuelve los onflictos entre las reglas y declaraciones de la hoja de estilos. Revisa la 
+--------importancia, especificidad y orden de las declaraciones------------- Para det qué estilo
+tendrá prioridad para ser mostrado
+
+========IMPORTANCIA==========
+1.- User: important declarations
+2.- Author: important declarations
+3.- Author declarations
+4.- User declarations
+5.- Default browser declarations
+
+======ESPECIFICIDAD DE LOS SELECTORES=======
+1.- Estilos en línea: Se escriben en el HTML
+2.- id's: #id
+3.- clases, pseudo-clases, atributos: .clase
+4.- elementos, pseudo-elementos: nav div, :hover :focus
+
+Se definirá el selector a usar en función de la especificidad de este (#,#,#,#) número de ocurrencias
+Se leerán de izquierda a derecha. Este es el valor de la cascada.
+Si hay un empate entre los selectores, se aplicará la última declaración CSS escrita en el código
+El selector universal *{} no tiene un valor de especificidad (0,0,0,0) por lo que todos los demás 
+selectores tienen prioridad sobre él.
+En caso de incluir más de una hoja de estilos, al útlimo del HTML se incluirá la nuestra, o la que
+queramos que mande en las hojas, en caso de que sólo queramos modificar algunos aspectos de la
+pág con las hojas de estilo externas.
+
+background-color: purple !important; Por la palabra !important se aplicará esta declaración
+
+//////////VALORES PROCESADOS//////////////
+Dimensiones, al final, todas las dimensiones establecidas se convertirán a px
+El ancho de los elementos padres es la referencia en % de sus elementos hijo
+"em": usa el elemento padre o actual como ref (font-size=3em; 3 veces el tamaño de fuente principal); esto
+es cuando se utiliza "em" para el tamaño de fuente.
+Utilizando "em" como longitud utiliza el tamaño de fuente del elemento actual como ref.
+(paddind=2em;) = el padding será de 48px si la fuente es de 24px
+"rem": usa el tamaño de fuente raíz como referencia. Si la fuente es de 16px y se tiene un 
+margin-botton=10rem; entonces se trendrá un margen de 160px.
+vh y vw se basan en el puerto de visualización del navegador
+view height y view width; 90vh es el 90% de la vista a lo alto de la pantalla.
+
+////HERENCIA/////
+Forma de propagar valores de un elemento padre a sus elementos hijo
+Si no hay un valor en cascada, se aplica la herencia. Algunas propiedades se pueden heredar y otras no.
+line-height se hereda (font-familie,color,font-size)
+padding no se hereda (margin)
+Lo que se hereda es el valor calculado y no el valor declarado
+inherit: para heredar
+initial: para reestablecer a su valor inicial
+
+El tamaño de fuente raíz se establece en el selector HTML
+
+
 
 
 

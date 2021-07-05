@@ -57,13 +57,14 @@ body {
     /*Ahora se debe transformar la caja para que el centro de la caja se ubique con las coordenadas*/
     transform: translate(-50%,-50%); /*Se establecen las medidas en el eje x,y */
     /* background-color: aqua; */
+    text-align: center;
 }
 
 .heading-primary {
     color: #fff;
     text-transform: uppercase;
-
     /* backface-visibility: hidden; Soluciona el problema de que las animaciones se agiten */
+    margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -115,3 +116,79 @@ body {
         transform: translate(0px);
     }
 }
+
+@keyframes moveFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 13px 30px;
+    display: inline-block;
+    border-radius: 20px;
+    transition: all .2s;
+
+    position: relative;
+}
+
+.btn:hover {
+    transform: translateY(-4px); /*El eje y se mueve de arriba hacia abajo*/
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.btn:active {
+    transform: translateY(-2px); /*Está en relación con el estado inicial, no con el hover*/
+    background-color: rgba(78, 29, 158, 0.678);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+.btn-white {
+    background-color: rgba(255, 255, 255, 0.601);
+    color: rgb(0, 0, 0);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Pseudo elementos (un elemento virtual de un componente, este elemento se puede diseñar)*/
+
+/* Crear un elemento igual al btn, ponerlo detrás de él. */
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%; /*del btn*/
+    width: 100%;
+    border-radius: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s; /*Inicio del hover (estado inicial antes de ".btn:hover::after")*/
+}
+
+.btn-white::after {
+    background-color: rgba(255, 255, 255, 0.801);
+}
+
+.btn:hover::after {
+    transform: scaleX(1.6) scaleY(1.8);
+    /* transform: scale(3); */
+    opacity: 0;/*Cuando se cumple el estado inicial del hover, se requiere que desaparezca*/
+}
+
+.btn-animated {
+    animation: moveFromTop .5s ease-out 1s;
+    animation-fill-mode: backwards;
+    
+}
+
+
