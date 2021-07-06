@@ -120,7 +120,54 @@ Lo que se hereda es el valor calculado y no el valor declarado
 inherit: para heredar
 initial: para reestablecer a su valor inicial
 
-El tamaño de fuente raíz se establece en el selector HTML
+El tamaño de fuente raíz se establece en el selector HTML; un rem es el tamaño de la fuente raíz.
+
+Al establecer un tamaño de fuente en px, se elimina la posibilidad de hacer zoom a la pág, porque
+siempre tendrá un tamaño definido. Por lo tanto, se usa un porcentaje, por defecto el navegador
+otorgará 16px como tamaño de fuente.
+
+El modelo de formato visual de CSS es un algoritmo que calcula las cajas y el diseño de estas
+para c/elemento en el árbol de representación, con el fin de det el diseño final de la pág:
+-box-type: inline, block...
+-position cheme: float, relative, absolute
+...
+
+box-sizing: border-box; Incluirá el padding de la caja.
+
+El tipo de la caja siempre está definido por la propiedad de visualización.
+
+display: block; ocupan el 100% del width, se colocan verticalmente uno después de otro
+
+display:inline; ocupa sólo el espacio del contenido, el contenido se distribuye en líneas, no 
+    tiene ancho ni altura, sólo se pueden especificar márgenes y paddings sólo a la izq y der,
+    no causa saltos de línea
+
+display: inline-block; mezcla entre block e inline, ocupa sólo el espacio del contenido y no causan
+    saltos de línea.
+
+Se puede establecer un bloque dentro de un inline-block
+
+////////////////
+POSITIONS:
+
+Normal float: se presentan en el orden natural del código
+
+Floats: hace que los elementos se desplacen a la izq o der (float: left; float: right;) lo más posible,
+hasta que toquen el borde de su caja
+
+Absolute position: (position: fixed;). Este elemento no tiene impacto con los elementos que lo rodean
+(incluso se pueden superponer a elementos que ocupan el mismo espacio, usando staking context (contextos
+de apilamiento, determinan en qué orden los elementos serán mostrados en la pág (z-index))) 
+se usa top, left, rigth, bottom.
+z-index=2; el que tenga el # más alto: aparecerá encima de los otros. Pero también la opacidad 
+provocan contextos (apilamientos)
+
+B E M :
+        Block                       .block{}
+        Block-Elemnt                .block-element{}
+        Block-Element-Modifier      .block-element-modifier{}
+
+    block__element--modifier           <-- Así en HTML
 
 
 
