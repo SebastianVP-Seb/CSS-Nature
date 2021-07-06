@@ -169,14 +169,139 @@ B E M :
 
     block__element--modifier           <-- Así en HTML
 
+                ===============================================================
+                                            S A S S
+                ===============================================================
+
+Es un preprocesador de CSS (CSS con superpoderes)
+Se escribe código SASS y luego se usa un compilador para transformarlo a código CSS.
+
+SASS proporciona:
+
+-variables: colores, tamaño de fuente, espacios.
+-anhidación: para anhidar selectores (permite escribir menos código).
+-operadores: permite operaciones matemáticas dentro de CSS.
+-partials & imports: para escribir CSS en diferentes archivos y luego importándolos dentro de otro.
+-mixins: para escribir piezas de código reutilizables.
+-funciones: similar a mixins, pero las funciones producen un valor que puede ser utilizado.
+-extends: hace que diferentes selectores hereden declaraciones comunes a ellos.
+-directivas de control: para escribir código con condicionales y ciclos.
+
+Existe dos sintaxis:
+1.- Sass Syntax: no utiliza ";" y honra la sangría, no usa "{}"
+
+2.- SCSS Syntax: conserva la apariencia original del CSS
+
+*{    Común ponerlo
+    margin: 0;
+    padding: 0;
+}
+
+ESCRIBIENDO EN SASS
+$variable: valor; -> ej -> $color-primario:red; -> background-color:$color-primario;
+
+nav {
+    li { PARA ANHIDAR
+        list-style:none;  Quita los puntos que se generan en una <li>
+
+        &:first-child { 
+            margin: 0px;
+        }
+    }
+}
+
+// Para hacer comentarios en SASS
+display:inline-block; pone los elementos como si fueran bloques uno enseguida de otro, de manera horizontal
 
 
+<nav class="clearfix">
+  <ul class="navigation">
+    <li><a href="#">About me</a></li>
+    <li><a href="#">About us</a></li>
+    <li><a href="#">About her</a></li>
+  </ul>
+  <div class="buttons">
+    <a class="btn-main" href="#">Sebastian</a>
+    <a class="btn-second" href=#>Palacios</a>
+  </div>
+</nav>
 
+*{    
+    margin: 0;
+    padding: 0;
+}
+$color-primary:yellow;
+$color-secondary:orange;
+$color-tertiary:pink;
+$color-text-dark:#333;
+$color-text-light:#fff;
 
+$width-btn:150px;
 
+nav {
+  background-color:$color-primary;
+  margin:30px;
+}
 
+.clearfix::after { //ya que está dentro del nav se puede poner como: &::after, esto dentro del nav
+  content:"";
+  clear:both;
+  display:table;
+}
 
+.navigation {
+  list-style:none;
+  float:left; //el color de fondo amarillo desaparece porque
+    //todos los elementos hijo de este contenedor (del nav) están flotando, el elemento colapsa y pierde su altura, así que se usa el método "clearfix": agregará un pseudoelemento después del elemento colapsado y limpiará el flotador. Este método se usa cuando se usan elementos flotantes (float). Se crea esta clase en el HTML, en el contenedor. En CSS, se define el content como empty
+  
+  li {
+    display: inline-block;
+    margin-left: 30px;
+    
+    &:first-child { //=.navigation li:first-child
+      margin: 0px;
+    }
+    
+    a:link { //preferible a poner solo "a"
+      text-decoration:none;
+      text-transform:uppercase;
+      color:$color-text-dark;
+    }
+  }
+}
 
+.buttons {
+  float:right;
+}
+
+.btn-main:link,
+.btn-second:link {
+  text-decoration:none;
+  padding:10px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50px;
+  width:$width-btn;
+  color:$color-text-light;
+}
+
+.btn-main {
+  &:link {
+    background-color:$color-secondary;
+  }
+  &:hover {
+    background-color:darken($color-secondary,5%); //oscurece
+  }
+}
+
+.btn-second {
+  &:link {
+    background-color:$color-tertiary;
+  }
+  &:hover {
+    background-color:lighten($color-tertiary,5%); //ilumina
+  }
+}
 
 
 */
