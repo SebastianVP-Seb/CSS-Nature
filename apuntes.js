@@ -350,6 +350,23 @@ En el package.json aparece en Dev-dependency
 PARA VOLVER A INSTALAR LA CARPETA NODE_MODULES: npm install
 ESTO REVISARÁ EL PACKAGE.JSON, E INCLUIRÁ LOS MÓDULOS NECESARIOS PARA EL PROYECTO
 
+=============================
+Para compilar un archivo SASS:
+    En el package.json se agrega un script
+    "compile:sass":"node-sass sass/main.scss css/style2.css"
+    "nombre":"función"
+    En este caso se necesita un archivo de entrada (el archivo SASS) y un archivo de salida
+    (el archivo .css) y ahí saldrá el archivo compilado
+    Luego, en la terminal escribir el comando que se definió con el nombre del script:
+    npm run nombreScript
+    Al escribir:
+    "compile:sass":"node-sass sass/main.scss css/style2.css -w"
+    La w indica que estará viendo si hay algún cambio en el archivo, lo ejecutará y no será
+    necesario volver a escribir el nombre del script en la consola.
+
+    Instalando globalmente live-server: , la "g" significa globalmente
+    npm i live-server -g
+
 
 
 
