@@ -1,0 +1,22 @@
+{
+  "name": "css-nature",
+  "version": "1.0.0",
+  "description": "Page",
+  "main": "apuntes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SebastianVP-Seb/CSS-Nature.git"
+  },
+  "author": "IngSebastian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SebastianVP-Seb/CSS-Nature/issues"
+  },
+  "homepage": "https://github.com/SebastianVP-Seb/CSS-Nature#readme",
+  "devDependencies": {
+    "node-sass": "^6.0.1"
+  }
+}

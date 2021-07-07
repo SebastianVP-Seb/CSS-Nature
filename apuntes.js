@@ -303,5 +303,54 @@ nav {
   }
 }
 
+               ==========================================
+                 Utilizando mixins, extends y funciones
+               ==========================================
+               
+@mixin nombreDelMixin {
+    código reutilzable
+}
+
+A los mixins se les pueden pasar argumentos que usarán como una var, donde se mande a llamar el
+mixin, dentro se le pasa el argumento que queramos tenga por propiedad, que también puede ser una
+var de SASS. Para esto, dentro del mixin se define la var (ej: color:$color;) el argumento que
+se pasará en el mixin delcarado es: $color
+
+//Para mandarlo a llamar en donde se desee: declararlo en el código antes de mandarlo a llamar:
+
+@include clearfix;
+
+Funciones: 
+    darken
+    lighten
+
+EXTENDS:
+    Se hereda código a los elemtos hijo
+
+    %nombreDelExtend {
+        código repetitivo
+    }
+
+    Para mandarlo a llamar:
+    @extend @nombreDelExtend; dentro del elemento que se quiere herede las características
+
+La diferencia entre el mixin y el extend, es que en ambos se escribe un bloque de código; el 
+mixin se duplicará donde se indique, y al contrario de esto, donde se mande a llamar el extend
+se copiará en el bloque de código que se ha definido en él.
+Para usar un extend, en demás selectores, éstos deben se estar relacionados.
+
+///////////////////////
+
+Utilizando node para instalar SASS
+Comprobar que está instalado con: node -v
+Crear el package.json con: npm init
+Instalar SASS con: npm i node-sass --save-dev  -> xq es una herramienta de desarrollo, no se requiere para producción
+En el package.json aparece en Dev-dependency
+
+PARA VOLVER A INSTALAR LA CARPETA NODE_MODULES: npm install
+ESTO REVISARÁ EL PACKAGE.JSON, E INCLUIRÁ LOS MÓDULOS NECESARIOS PARA EL PROYECTO
+
+
+
 
 */
