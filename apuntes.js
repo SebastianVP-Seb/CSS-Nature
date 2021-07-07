@@ -367,6 +367,38 @@ Para compilar un archivo SASS:
     Instalando globalmente live-server: , la "g" significa globalmente
     npm i live-server -g
 
+    =================================================
+    Para poner una var de color en una notación rgba:
+      color: rgba(%color-black,.2);
+
+    ==================================================
+    Usar la metodología 7-1. Crear 7 folders dentro de la carpeta SASS
+    Donde al final, un sólo archivo principal será el que se mande a llamar.
+    Dentro de estas carpetas estarán sus archivos parciales, nombrándolos comenzando por
+    un "_nombre.scss" y luego importarlos en el main.scss ... sólo eso.
+    1.- base
+    2.- abstracts -> código que no genera código css (mixins, variables, funciones)
+    3.- componentes -> bloques reutilizables de código (c/componente tendrá su propio archivo)
+    4.- layout -> partes de la pág (header, footer) que es código independiente
+    5.- pages -> diferentes páginas
+    6.- temas
+    7.- código css de terceros
+
+    =================================================
+    Principios de Responsive Design
+
+    1.- Pantalla fluida: usar porcentajes en vez de px (permitirá adaptar el tamaño de la pantalla)
+    2.- Imágenes flexibles y responsivas: las img se comportan diferente a los textos, asegurarnos
+      que su fluido sea óptimo. Ya que no se escalan automáticamente. Por lo tanto, también
+      definir sus medidas como porcentajes.
+    3.- Consultas de medios (media queries): para cambiar el estilo del ancho de una cierta vista,
+      permitiendo crear diferentes versiones del sitio con diferentes anchos.
+      
+    Existen 3 formas de diseñar un sitio web:
+    1.- float layouts
+    2.- felx-box
+    3.- css grid
+
 
 
 

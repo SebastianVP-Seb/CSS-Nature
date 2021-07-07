@@ -1,0 +1,35 @@
+.header {
+    height: 95vh;
+    background-image: linear-gradient(
+        to left top,
+        rgba($color-primary, 0.74),
+        rgba($color-primary-light, 0.75)),
+        url(../img/AJlewFN6EZk.jpg);
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon( 0 0, 100% 0, 100% 80vh, 0 100%);
+    position: relative; /*El padre debe ser rel y el hijo abs (logo-box)*/
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        height: 3.5rem;
+
+        &hover {
+            animation: moveInRight 4s ease-out;
+        }
+    }
+
+    &__text-box {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%,-50%); /*Se establecen las medidas en el eje x,y */
+        /* background-color: aqua; */
+        text-align: center;
+    }
+}

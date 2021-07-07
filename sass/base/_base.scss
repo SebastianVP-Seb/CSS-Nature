@@ -1,0 +1,16 @@
+*,
+*::after, /*Se actualiza este selector para que los pseudoelementos tengan el mismo comportamiento*/
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit; /*Fuerza la herencia del body*/
+}
+
+html {
+    /* font-size: 10px; Por comodidad (1rem=10px) */
+    font-size: 62.5%; /*Permitirá hacer zoom a la pág... lo que queremos/16: 10/16=.625*/
+}
+
+body {
+    box-sizing: border-box;
+}
