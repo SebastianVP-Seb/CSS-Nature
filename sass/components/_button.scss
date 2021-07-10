@@ -62,3 +62,34 @@
         animation-fill-mode: backwards;
     }
 }
+
+.btn-text {
+    &:link,
+    &:visited {
+        font-family: 'Bona Nova', serif;
+        font-weight: bolder;
+        font-size: $default-font-size;
+        text-decoration: none;
+        color: $color-primary;
+        display: inline-block;
+        border-bottom: .2rem solid $color-primary;
+        padding: .3rem;
+
+        transition: all .5s;
+    }
+
+    &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 1.5rem rgba($color-black, 0.2);
+        transform: translateY(-.2rem);
+        border-bottom: .2rem solid $color-primary-light;
+    }
+
+    &:active {
+        box-shadow: 0 .5rem 1.5rem rgba($color-black, 0.2);
+        transform: translateY(-.1rem);
+        border-bottom: .2rem solid $color-primary-dark;
+        color: $color-primary-dark
+    }
+}

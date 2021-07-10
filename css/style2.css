@@ -1,4 +1,27 @@
 @charset "UTF-8";
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 6rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    height: 2rem;
+    float: left;
+    text-align: center;
+    color: #000000; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+
+.col-1-of-2 {
+  width: calc((100% - 6rem) / 2);
+  float: left; }
+  .col-1-of-2:not(:last-child) {
+    margin-right: 6rem; }
+
 @keyframes moveInLeft {
   0% {
     /*Cuando la animación comienza*/
@@ -52,13 +75,13 @@ body {
   font-weight: 400;
   /* font-size: 16px; ahora la fuene es de 10px en el selector HTML*/
   line-height: 1.7;
-  color: #ffffff;
+  color: grey;
   padding: 3rem; }
 
 .heading-primary {
   color: #ffffff;
   text-transform: uppercase;
-  /* backface-visibility: hidden; Soluciona el problema de que las animaciones se agiten */
+  backface-visibility: hidden;
   margin-bottom: 6rem; }
   .heading-primary--main {
     display: block;
@@ -74,6 +97,44 @@ body {
     font-weight: 700;
     letter-spacing: 1.9rem;
     animation: moveInRight 4s ease-out; }
+
+.heading-secondary {
+  text-transform: uppercase;
+  font-family: 'Bona Nova', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #4426cc, #c728ac);
+  display: inline-block;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: .2rem;
+  transition: all 1s; }
+  .heading-secondary:hover {
+    transform: scale(1.1);
+    background-image: linear-gradient(to left, #6348dd, #da48c1);
+    text-shadow: 0.5rem 0.5rem 0.5rem #333333; }
+
+.heading-tertiary {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.paragraph {
+  font-family: 'Kalam', cursive;
+  font-size: 1.6rem;
+  padding: 0 4rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
+
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-big {
+  margin-bottom: 7rem; }
+
+.u-margin-bottom-small {
+  margin-bottom: 2rem; }
 
 .btn {
   /* Pseudo elementos (un elemento virtual de un componente, este elemento se puede diseñar)*/
@@ -125,6 +186,60 @@ body {
     animation: moveFromTop .5s ease-out 1s;
     animation-fill-mode: backwards; }
 
+.btn-text:link, .btn-text:visited {
+  font-family: 'Bona Nova', serif;
+  font-weight: bolder;
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: #4426cc;
+  display: inline-block;
+  border-bottom: 0.2rem solid #4426cc;
+  padding: .3rem;
+  transition: all .5s; }
+
+.btn-text:hover {
+  background-color: #4426cc;
+  color: #ffffff;
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.2rem);
+  border-bottom: 0.2rem solid #c728ac; }
+
+.btn-text:active {
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.1rem);
+  border-bottom: 0.2rem solid #28b485;
+  color: #28b485; }
+
+.composition {
+  position: relative; }
+  .composition_photo {
+    width: 55%;
+    box-shadow: 0 1rem 3rem black;
+    border-radius: 1rem;
+    position: absolute;
+    z-index: 1;
+    transition: all .5s;
+    outline-offset: 1rem; }
+    .composition_photo--f1 {
+      top: -3rem;
+      left: 0; }
+    .composition_photo--f2 {
+      top: 5rem;
+      right: 4rem; }
+    .composition_photo--f3 {
+      top: 18rem;
+      left: 0; }
+    .composition_photo--f4 {
+      top: 26rem;
+      right: 4rem; }
+    .composition_photo:hover {
+      box-shadow: 0 1.5rem 3rem black;
+      z-index: 2;
+      transform: scale(1.05) translateY(-1rem);
+      outline: 0.3rem solid #4426cc; }
+  .composition:hover .composition_photo:not(:hover) {
+    transform: scale(0.95); }
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to left top, rgba(68, 38, 204, 0.74), rgba(199, 40, 172, 0.75)), url(../img/AJlewFN6EZk.jpg);
@@ -149,3 +264,9 @@ body {
     /*Se establecen las medidas en el eje x,y */
     /* background-color: aqua; */
     text-align: center; }
+
+.section-about {
+  background-color: #e6e6e6;
+  padding: 15rem 0;
+  margin-top: -15vh;
+  height: 75rem; }

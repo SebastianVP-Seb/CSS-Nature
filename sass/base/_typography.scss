@@ -3,14 +3,14 @@ body {
     font-weight: 400;
     /* font-size: 16px; ahora la fuene es de 10px en el selector HTML*/ 
     line-height: 1.7;
-    color: $color-white;
+    color: $color-grey;
     padding: 3rem;
 }
 
 .heading-primary {
     color:$color-white;
     text-transform: uppercase;
-    /* backface-visibility: hidden; Soluciona el problema de que las animaciones se agiten */
+    backface-visibility: hidden; //Soluciona el problema de que las animaciones se agiten */
     margin-bottom: 6rem;
     
     &--main {
@@ -31,5 +31,42 @@ body {
         letter-spacing: 1.9rem;
         
         animation: moveInRight 4s ease-out;
+    }
+}
+
+.heading-secondary {
+    text-transform: uppercase;
+    font-family: 'Bona Nova', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    //Para el degradado en el texto
+    background-image: linear-gradient(to right, $color-primary,$color-primary-light);
+    display: inline-block; //junta el texto con el background-image
+    -webkit-background-clip: text;//hace que el fondo se recorte exactamente donde está el texto
+    color: transparent;//para que se vea el color del gradiente
+    letter-spacing: .2rem;
+    transition: all 1s;
+
+    &:hover {
+        transform:scale(1.1);
+        background-image: linear-gradient(to left, lighten($color-primary,10%),lighten($color-primary-light,10%));
+        text-shadow: .5rem .5rem .5rem lighten($color-black,20%);
+    }
+}
+
+.heading-tertiary {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: $default-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.paragraph {
+    font-family: 'Kalam', cursive;
+    font-size: $default-font-size;
+    padding: 0 4rem;
+
+    &:not(:last-child) {
+        margin-bottom: 3rem;
     }
 }

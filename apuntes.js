@@ -400,6 +400,57 @@ Para compilar un archivo SASS:
     3.- css grid
 
 
+<main> //Se usa para indicar que es la parte principal del sitio web. Va debajo del header
+    y luego sigue el footer
+
+    darken - lighten
+
+    background-color:lighten($color-tertiary,5%);
+
+Al establecer el main, éste comienza justo donde termina el header y al establecer
+un color de fondo, se ve el triángulo que queda debido al corte que tiene la imagen principal.
+Entonces hay que "subir" el main utilizando un margen negativo
+Pero, cuánto hay que subirlo?
+  clip-path: polygon( 0 0, 100% 0, 100% 80vh, 0 100%);
+  la vista principal tiene 95vh (height: 95vh;). La esquina sup derecha termina al 80% 
+  (le falta 15% para ocupar el 95%). Entonces: para subir el main:
+  95vh-80vh=15vh: un margen negativo de 1.5rem.
+
+  https://bennettfeely.com/clippy/   ----> Para hacer diferentes polígonos
+
+Estilo de degradado en el texto:
+  Establecer un background-gradient al h2:
+    background-image: linear-gradient(to right, $color-primary,$color-primary-light);
+    text-shadow: .5rem .5rem .5rem lighten($color-black,20%);
+      (dirección x, y, desenfoque)
+
+Clases de utilidad: Sólo tienen un obj, en este caso, centrar el texto y se pueden reutilizar
+en otras partes del código. Ponerla en la sección de utilities en la carpeta "base"
+ crear un div (u-center-text) que envuelva al heading-secondary
+
+    Definir otra clase de utilidad para definir un espacio en blanco entre el texto de 
+    heading-secondary y las dos columnas de float layout
+    "u-margin-bottom-80"
+
+box-shadow: 0 1rem 1.5rem rgba($color-black, 0.2);
+: direccionX Y desenfoque color;
+
+Cuando se usa un transform, se debe usar un transition en el elemento padre
+
+Para las imágenes, crear un archivo nuevo en components (compositions.scss)
+Para encimarlas, usar posicionamiento absoluto. Recordar que cuando se usa posicionamiento
+absoluto, el primer padre de este "contenedor" debe tener posicionamiento relativo
+
+Para hacer imágenes responsivas, su ancho se debe definir en %
+
+Para hacer el efecto de que una imagen se alze sobre las otras, se le define un z-index
+a todas y en el hover se establece un índice más alto al que está por defecto.
+
+Para establecer el marco de las imgs, se usa outline y outline-offset (la separación del
+  borde de la imagen al marco)
+    
+
+
 
 
 */

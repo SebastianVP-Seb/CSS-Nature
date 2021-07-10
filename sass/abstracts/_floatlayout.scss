@@ -1,0 +1,30 @@
+.row {
+    max-width: $grid-with;
+    margin: 0 auto;
+
+    &:not(:last-child){
+        margin-bottom: $gutter-vertical;
+    }
+
+    @include clearfix;
+
+    [class^="col-"] {
+        height: $height-bloque;
+        float: left;
+        text-align: center;
+        color: $color-black;
+            //Al tener código repetitivo para c/u de estas clases, se usará el selector de atributos
+        &:not(:last-child) {
+            margin-right: $gutter-horizontal;
+        }
+    }
+}
+
+.col-1-of-2 {
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+    float: left;
+
+    &:not(:last-child) {
+        margin-right: $gutter-horizontal;
+    }
+}
