@@ -65,6 +65,7 @@ body {
     font-family: 'Kalam', cursive;
     font-size: $default-font-size;
     padding: 0 4rem;
+    text-align: justify;
 
     &:not(:last-child) {
         margin-bottom: 3rem;

@@ -448,7 +448,29 @@ a todas y en el hover se establece un índice más alto al que está por defecto
 
 Para establecer el marco de las imgs, se usa outline y outline-offset (la separación del
   borde de la imagen al marco)
-    
+
+
+============================
+Sección de características
+============================
+
+Construir una fila con 4 columnas (las filas guardan las columnas)
+
+Es recomendable utilizar los íconos como font, porque estos son vectores y no se verán alterados
+al acercar la página, siempre permanecerán nítidos: copiar el folder fonts y el archivo iconfont.css
+a la carpeta CSS. Luego importar este estilo (iconfont.css) en el html.
+En el archivo css hay una clase para c/ícono.
+
+Crear una nueva sección con la clase section-features. 
+Para incluir un ícono, por convención se ha acordado que en el html sea un elemento "i" que significa
+italic o cursiva, antes se usaba para darle ese estilo a las letras.
+Buscar en el archivo iconfont la clase del símbolo que queremos usar:
+  <i class="icofont-lion-head-1"></i>
+La clase feature-box del div que contiene estas columnas se tratará como un componente (crearlo en
+  la carpeta e importarlo en el main scss)
+Agregar la sección section-features al archivo _home.scss
+
+background-size: cover;    Para que se vea toda la imagen
 
 
 

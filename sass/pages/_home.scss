@@ -4,3 +4,13 @@
     margin-top: -15vh;
     height: 75rem;
 }
+
+.section-features {
+    padding: 16rem 5rem;
+    height: 60rem;
+    background-image: linear-gradient(to left,
+    rgba($color-primary-light,.7),
+    rgba($color-primary,.7)),
+    url(../../img/ZlRM.jpg);
+    background-size: cover;
+}
