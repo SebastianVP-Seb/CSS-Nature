@@ -472,6 +472,29 @@ Agregar la sección section-features al archivo _home.scss
 
 background-size: cover;    Para que se vea toda la imagen
 
+> *
+  Indica que seleccionará a los hijos, y el * indica que se seleccionarán a todos los hijos, no
+  sólo a los inmediatos.
+Ahora, para subir la sección, usar un margin-top negativo
+
+============================
+      Sección Tours
+============================
+Sección Tours en HTML
+Crear la tarjeta como un componente.
+La perspectiva, se define en el padre que contiene al elemento.
+
+Mientras menor sea el número en: perspective: 150rem; mayor será la perspectiva.
+
+Mientras el lado frontal es mostrado (0°) (aún sin hover), la parte posterior digamos que está rotada
+180°. Por lo tanto, al hacer hover, sólo la parte frontal rotará -180 y la trasera 0°.
+Position relative y absolute harán que se encimen (el padre debe tener posicionamiento relativo
+  y se definen sus coordenadas con top y left 0 de los elementos hijo (absolute)).
+Las alturas de las tarjetas han colapsaso y se ha perdido la perspectiva, aquí no se puede usar 
+clearfix debido al posicionamiento abs, entonces se establece la misma altatura que tienen los
+lados a la tarjeta principal. -> height: 40rem;
+Agregar la propiedad ease para que el giro de la tarjeta no se vea tan marcado
+
 
 
 

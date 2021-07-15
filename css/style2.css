@@ -220,6 +220,36 @@ body {
   border-bottom: 0.2rem solid #28b485;
   color: #28b485; }
 
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 40rem; }
+  .card_side {
+    background-image: linear-gradient(to right, #a1ffce, #faffd1);
+    height: 40rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    box-shadow: 0 0.3rem 4rem rgba(0, 0, 0, 0.2); }
+    .card_side-back {
+      transform: rotateY(180deg); }
+      .card_side-back-1 {
+        background-image: linear-gradient(to right, #ee0979, #ff6a00); }
+      .card_side-back-2 {
+        background-image: linear-gradient(to right, #0cebeb, #20e3b2, #29ffc6); }
+      .card_side-back-3 {
+        background-image: linear-gradient(to right, #ef32d9, #89fffd); }
+  .card:hover .card_side-front {
+    transform: rotateY(-180deg);
+    box-shadow: 0 0.5rem 4rem rgba(0, 0, 0, 0.8); }
+  .card:hover .card_side-back {
+    transform: rotateY(0);
+    box-shadow: 0 0.5rem 4rem rgba(0, 0, 0, 0.8); }
+
 .composition {
   position: relative; }
   .composition_photo {
@@ -270,6 +300,9 @@ body {
       background-image: linear-gradient(to left, #6348dd, #da48c1); }
   .feature-box:hover {
     transform: translateY(-1.5rem) scale(1.03); }
+  .feature-box_text {
+    font-family: 'Zen Loop', cursive;
+    font-weight: 700; }
 
 .header {
   height: 95vh;
@@ -300,10 +333,32 @@ body {
   background-color: #e6e6e6;
   padding: 15rem 0;
   margin-top: -15vh;
-  height: 75rem; }
+  height: 95rem; }
 
 .section-features {
   padding: 16rem 5rem;
   height: 60rem;
   background-image: linear-gradient(to left, rgba(199, 40, 172, 0.7), rgba(68, 38, 204, 0.7)), url(../../img/ZlRM.jpg);
-  background-size: cover; }
+  background-size: cover;
+  margin-top: -10rem;
+  transform: skewY(-7deg); }
+  .section-features > * {
+    transform: skewY(7deg); }
+
+.section-tours {
+  height: 80rem;
+  padding: 0 4rem; }
+  .section-tours .heading-secondary-live {
+    font-size: 5.5rem;
+    font-weight: 700;
+    margin-top: 9rem;
+    font-family: 'Sacramento', cursive;
+    font-weight: 700;
+    background-image: linear-gradient(to top, #4426cc, #c728ac);
+    display: inline-block;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: all 1s; }
+    .section-tours .heading-secondary-live:hover {
+      letter-spacing: .2rem;
+      background-image: linear-gradient(to bottom, #4426cc, #c728ac); }

@@ -1,0 +1,46 @@
+.card {
+    perspective: 150rem;
+    -moz-perspective: 150rem;//para que funcione en firefox
+
+    position: relative;
+    height: 40rem;//para evitar el colapso de las tarjetas (misma altuta que _side)
+
+    &_side {
+        background-image: linear-gradient(to right, #a1ffce, #faffd1);
+        height: 40rem;
+        transition: all .8s ease;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        box-shadow: 0 .3rem 4rem rgba($color-black, .2);
+
+    &-back {
+        transform: rotateY(180deg);
+
+        &-1 {
+            background-image: linear-gradient(to right, #ee0979, #ff6a00)
+        }
+    
+        &-2 {
+            background-image: linear-gradient(to right, #0cebeb, #20e3b2, #29ffc6);
+        }
+    
+        &-3 {
+            background-image: linear-gradient(to right, #ef32d9, #89fffd);
+        }
+    }
+}
+
+    &:hover &_side-front {//cuando se haga el hover, side se transformará
+        transform: rotateY(-180deg);
+        box-shadow: 0 .5rem 4rem rgba($color-black, .8);
+    }
+
+    &:hover &_side-back {//cuando se haga el hover, side se transformará
+        transform: rotateY(0);
+        box-shadow: 0 .5rem 4rem rgba($color-black, .8);
+    }
+}
