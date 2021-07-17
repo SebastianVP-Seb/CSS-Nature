@@ -15,13 +15,15 @@
         left: 0;
         width: 100%;
         backface-visibility: hidden;
+        border-radius: .9rem;
+        overflow: hidden;
         box-shadow: 0 .3rem 4rem rgba($color-black, .2);
 
     &-back {
         transform: rotateY(180deg);
 
         &-1 {
-            background-image: linear-gradient(to right, #ee0979, #ff6a00)
+            background-image: linear-gradient(to right, #ee0979, #ff6a00);
         }
     
         &-2 {
@@ -42,5 +44,105 @@
     &:hover &_side-back {//cuando se haga el hover, side se transformará
         transform: rotateY(0);
         box-shadow: 0 .5rem 4rem rgba($color-black, .8);
+    }
+
+    &_image {
+        background-size: cover;
+        height: 20rem;
+        // background-blend-mode: soft-light;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 89%);//para que funcione en otros navegadores
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 89%);
+
+        &-1 {
+            // background-image: linear-gradient(to right, #ee0979, #ff6a00), url(../img/DpoMKEARZe4.jpg);
+            background-image: url(../img/DpoMKEARZe4.jpg);
+        }
+
+        &-2 {
+            background-image: url(../img/TS2UKluECVE.jpg);
+        }
+
+        &-3 {
+            background-image: url(../img/3-3k_sYEJ1s.jpg);
+        }
+    }
+    &_heading {
+        text-transform: uppercase;
+        color: $color-white;
+        font-size: 2.8rem;
+        font-weight: 300;
+        position: absolute;
+        top: 8rem;
+        right: 2rem;
+        text-align: right;
+        font-family: 'Italiana', serif;
+        width: 40%;//Para hacer que el texto en la img ocupe dos renglones
+    }
+
+    &_heading-span {
+        padding: .3rem .5rem;
+        -webkit-box-decoration-break: clone;//Para que el padding se vea al inicio y al final del texto
+        box-decoration-break: clone;
+
+        &-1 {
+            background-image: linear-gradient(to right, rgba( #ee0979,.6), rgba(#ff6a00,.6));
+        }
+
+        &-2 {
+            background-image: linear-gradient(to right, rgba(#00c9ff,.6), rgba( #92fe9d,.6));
+        }
+
+        &-3 {
+            background-image: linear-gradient(to right, rgba(#fc00ff,.6), rgba( #00dbde,.6));
+        }
+    }
+
+    &_details {
+        font-family: 'Italiana', serif;
+        margin-top: .6rem;
+
+        ul {
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;//Para centrar los elementos de la lista
+
+            li {
+                text-align: center;
+                font-size: 1.5rem;
+                padding: .4rem;
+
+                &:not(:last-child) {
+                    border-bottom: .1rem solid $color-black;
+                }
+            }
+        }
+    }
+
+    //Lado posterior, hijo de card_side
+    &_back {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-family: 'Italiana', serif;
+    }
+
+    &_price-box {
+        color: $color-white;
+    }
+
+    &_price-only {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+
+    &_price-value {
+        font-size: 6rem;
+        font-weight: 100;
+        color: $color-white;
+    }
+
+    &_btn-font {
+        font-family: 'Italiana', serif;
     }
 }

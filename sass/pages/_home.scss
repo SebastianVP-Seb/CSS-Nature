@@ -23,8 +23,11 @@
 }
 
 .section-tours {
-    height: 80rem;
-    padding: 0 4rem;
+    height: 90rem;
+    background-color: lighten($color-grey,40%);
+    padding: 6rem 4rem;
+    margin-top: -7rem;
+    // padding: 0 0 5rem 0;
     .heading-secondary-live{
         font-size: 5.5rem;
         font-weight: 700;

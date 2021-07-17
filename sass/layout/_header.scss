@@ -7,6 +7,7 @@
         url(../img/AJlewFN6EZk.jpg);
     background-size: cover;
     background-position: top;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 89%);//para que funcione en otros navegadores
     clip-path: polygon( 0 0, 100% 0, 100% 80vh, 0 100%);
     position: relative; /*El padre debe ser rel y el hijo abs (logo-box)*/
 

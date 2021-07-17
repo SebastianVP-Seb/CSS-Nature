@@ -146,6 +146,9 @@ body {
 .u-margin-bottom-small {
   margin-bottom: 2rem; }
 
+.u-margin-top-big {
+  margin-top: 47rem; }
+
 .btn {
   /* Pseudo elementos (un elemento virtual de un componente, este elemento se puede diseñar)*/
   /* Crear un elemento igual al btn, ponerlo detrás de él. */ }
@@ -178,6 +181,12 @@ body {
     color: #000000;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
     .btn--white::after {
+      background-color: rgba(255, 255, 255, 0.801); }
+  .btn--purple {
+    background-color: rgba(68, 38, 204, 0.601);
+    color: #000000;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+    .btn--purple::after {
       background-color: rgba(255, 255, 255, 0.801); }
   .btn::after {
     content: "";
@@ -234,6 +243,8 @@ body {
     left: 0;
     width: 100%;
     backface-visibility: hidden;
+    border-radius: .9rem;
+    overflow: hidden;
     box-shadow: 0 0.3rem 4rem rgba(0, 0, 0, 0.2); }
     .card_side-back {
       transform: rotateY(180deg); }
@@ -249,6 +260,68 @@ body {
   .card:hover .card_side-back {
     transform: rotateY(0);
     box-shadow: 0 0.5rem 4rem rgba(0, 0, 0, 0.8); }
+  .card_image {
+    background-size: cover;
+    height: 20rem;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 89%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 89%); }
+    .card_image-1 {
+      background-image: url(../img/DpoMKEARZe4.jpg); }
+    .card_image-2 {
+      background-image: url(../img/TS2UKluECVE.jpg); }
+    .card_image-3 {
+      background-image: url(../img/3-3k_sYEJ1s.jpg); }
+  .card_heading {
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 2.8rem;
+    font-weight: 300;
+    position: absolute;
+    top: 8rem;
+    right: 2rem;
+    text-align: right;
+    font-family: 'Italiana', serif;
+    width: 40%; }
+  .card_heading-span {
+    padding: .3rem .5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone; }
+    .card_heading-span-1 {
+      background-image: linear-gradient(to right, rgba(238, 9, 121, 0.6), rgba(255, 106, 0, 0.6)); }
+    .card_heading-span-2 {
+      background-image: linear-gradient(to right, rgba(0, 201, 255, 0.6), rgba(146, 254, 157, 0.6)); }
+    .card_heading-span-3 {
+      background-image: linear-gradient(to right, rgba(252, 0, 255, 0.6), rgba(0, 219, 222, 0.6)); }
+  .card_details {
+    font-family: 'Italiana', serif;
+    margin-top: .6rem; }
+    .card_details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; }
+      .card_details ul li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: .4rem; }
+        .card_details ul li:not(:last-child) {
+          border-bottom: 0.1rem solid #000000; }
+  .card_back {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Italiana', serif; }
+  .card_price-box {
+    color: #ffffff; }
+  .card_price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase; }
+  .card_price-value {
+    font-size: 6rem;
+    font-weight: 100;
+    color: #ffffff; }
+  .card_btn-font {
+    font-family: 'Italiana', serif; }
 
 .composition {
   position: relative; }
@@ -309,6 +382,7 @@ body {
   background-image: linear-gradient(to left top, rgba(68, 38, 204, 0.74), rgba(199, 40, 172, 0.75)), url(../img/AJlewFN6EZk.jpg);
   background-size: cover;
   background-position: top;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 89%);
   clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
   position: relative;
   /*El padre debe ser rel y el hijo abs (logo-box)*/ }
@@ -346,8 +420,10 @@ body {
     transform: skewY(7deg); }
 
 .section-tours {
-  height: 80rem;
-  padding: 0 4rem; }
+  height: 90rem;
+  background-color: #e6e6e6;
+  padding: 6rem 4rem;
+  margin-top: -7rem; }
   .section-tours .heading-secondary-live {
     font-size: 5.5rem;
     font-weight: 700;

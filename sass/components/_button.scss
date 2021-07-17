@@ -39,6 +39,16 @@
             background-color: rgba($color-white, 0.801);
         }
     }
+
+    &--purple {
+        background-color: rgba($color-primary, 0.601);
+        color: $color-black;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        
+        &::after {
+            background-color: rgba($color-white, 0.801);
+        }
+    }
     
     /* Pseudo elementos (un elemento virtual de un componente, este elemento se puede diseñar)*/
     
