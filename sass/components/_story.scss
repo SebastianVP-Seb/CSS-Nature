@@ -1,0 +1,84 @@
+.story {
+    font-family: 'Jim Nightshade', cursive;
+    width: 75%;
+    font-size: $default-font-size;
+    margin: 0 auto;//se puede usar porque es un elemento bloque dentro de otro
+    background-color: rgba($color-white,.3);
+    box-shadow: 0 3rem 6rem rgba($color-black, .4);
+    border-radius: .4rem;
+    padding: 3rem 4rem 5rem 7rem;
+    // padding-left: 10rem;
+    // padding-top: -1rem;
+    transform: skewX(-12deg);//Inclina los elementos seleccionados
+
+    position: relative;
+
+    & > * {//los hijos de este elemento
+        transform: skewX(12deg);//Para reinvertir el giro de arriba. En la img no funciona porque 
+        //ya se está usando: transform: translateX(-3rem);
+        //No se puede tener más de un transform en una propiedad
+        //Entonces definir skewX como segundo argumento en translateX
+    }
+
+    &_shape {
+        // background;
+        // background-color: salmon;
+        float: left;
+        width: 15rem;
+        height: 15rem;
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);//radio, coordenadas. Para que funcione, además de ser
+        //un elemento flotante, debe tener dimensiones (height & width).
+        //Hace que el texto de fuera, flote con la forma de un círculo
+
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);//Crea el círculo
+
+        transform: translateX(-3rem) skewX(12deg);
+        overflow: hidden;
+
+        position: relative;
+    }
+
+    &_image {//Para arreglar la imagen
+        // width: 100%;//No alcanza a llenar el círculo completo
+        height: 100%;//Se le da el 100% porque la imagen está contenida dentro de una forma
+        background-position: center;
+        transform: translateX(-3rem) scale(1.2);//Para mover la imagen y centrarla nosotros
+        backface-visibility: hidden;
+        transition: all 1s;
+    }
+
+    &-titulo1 {
+        color: $color-primary;
+    }
+
+    &_caption {
+        text-transform: uppercase;
+        color: $color-white;
+        font-size: 1.7rem;
+        position: absolute;//el padre es shape
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        text-align: center;
+        opacity: 0;
+        transition: all 1s;
+        backface-visibility: hidden;//Elimina el rebote en la animación 
+
+    }
+
+    &:hover &_caption{
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &_image {//hover de la img
+        transform: scale(1) translateX(-3rem);
+        filter: blur(.1rem) brightness(.8);//brightness oscurece la img
+    }
+
+    &:hover &-titulo1 {
+        color: $color-primary-light;
+    }
+}

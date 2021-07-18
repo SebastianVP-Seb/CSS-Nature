@@ -13,3 +13,39 @@
 .u-margin-top-big {
     margin-top: 47rem;
 }
+
+.parpadea {
+    animation-name: parpadeo;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.u-clase-parpadea {
+    font-family: 'Princess Sofia', cursive;
+    font-size: 5.5rem;
+    font-weight: 100;
+    
+    display: inline-block; //junta el texto con el background-image
+    color: transparent;//para que se vea el color del gradiente
+    letter-spacing: .8rem;
+}
+  
+  @keyframes parpadeo {  
+    0% {
+        opacity: 1.0; 
+        color: hotpink;
+    }
+    33% {
+        opacity: 1.0; 
+        color: aqua;
+    }
+    67% {
+        opacity: 1.0; 
+        color:purple;
+    }
+    100% { 
+        opacity: 1.0; 
+        color:lime;
+    }
+  }

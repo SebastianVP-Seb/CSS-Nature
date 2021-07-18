@@ -149,6 +149,34 @@ body {
 .u-margin-top-big {
   margin-top: 47rem; }
 
+.parpadea {
+  animation-name: parpadeo;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite; }
+
+.u-clase-parpadea {
+  font-family: 'Princess Sofia', cursive;
+  font-size: 5.5rem;
+  font-weight: 100;
+  display: inline-block;
+  color: transparent;
+  letter-spacing: .8rem; }
+
+@keyframes parpadeo {
+  0% {
+    opacity: 1.0;
+    color: hotpink; }
+  33% {
+    opacity: 1.0;
+    color: aqua; }
+  67% {
+    opacity: 1.0;
+    color: purple; }
+  100% {
+    opacity: 1.0;
+    color: lime; } }
+
 .btn {
   /* Pseudo elementos (un elemento virtual de un componente, este elemento se puede diseñar)*/
   /* Crear un elemento igual al btn, ponerlo detrás de él. */ }
@@ -228,6 +256,30 @@ body {
   transform: translateY(-0.1rem);
   border-bottom: 0.2rem solid #28b485;
   color: #28b485; }
+
+.btn-text-cara:link, .btn-text-cara:visited {
+  font-family: 'Bona Nova', serif;
+  font-weight: bolder;
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: #c728ac;
+  display: inline-block;
+  border-bottom: 0.2rem solid #c728ac;
+  padding: .3rem;
+  transition: all .5s; }
+
+.btn-text-cara:hover {
+  background-color: #28b485;
+  color: #ffffff;
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.2rem);
+  border-bottom: 0.2rem solid #ffffff; }
+
+.btn-text-cara:active {
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.1rem);
+  border-bottom: 0.2rem solid #4426cc;
+  color: #4426cc; }
 
 .card {
   perspective: 150rem;
@@ -377,6 +429,74 @@ body {
     font-family: 'Zen Loop', cursive;
     font-weight: 700; }
 
+.story {
+  font-family: 'Jim Nightshade', cursive;
+  width: 75%;
+  font-size: 1.6rem;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.4);
+  border-radius: .4rem;
+  padding: 3rem 4rem 5rem 7rem;
+  transform: skewX(-12deg);
+  position: relative; }
+  .story > * {
+    transform: skewX(12deg); }
+  .story_shape {
+    float: left;
+    width: 15rem;
+    height: 15rem;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg);
+    overflow: hidden;
+    position: relative; }
+  .story_image {
+    height: 100%;
+    background-position: center;
+    transform: translateX(-3rem) scale(1.2);
+    backface-visibility: hidden;
+    transition: all 1s; }
+  .story-titulo1 {
+    color: #4426cc; }
+  .story_caption {
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 1.7rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    opacity: 0;
+    transition: all 1s;
+    backface-visibility: hidden; }
+  .story:hover .story_caption {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
+  .story:hover .story_image {
+    transform: scale(1) translateX(-3rem);
+    filter: blur(0.1rem) brightness(0.8); }
+  .story:hover .story-titulo1 {
+    color: #c728ac; }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  z-index: -1;
+  opacity: .7;
+  overflow: hidden; }
+  .bg-video-content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to left top, rgba(68, 38, 204, 0.74), rgba(199, 40, 172, 0.75)), url(../img/AJlewFN6EZk.jpg);
@@ -438,3 +558,9 @@ body {
     .section-tours .heading-secondary-live:hover {
       letter-spacing: .2rem;
       background-image: linear-gradient(to bottom, #4426cc, #c728ac); }
+
+.section-stories {
+  font-family: 'Jim Nightshade', cursive;
+  color: #000000;
+  padding: 9.5rem 0 11rem 0;
+  position: relative; }

@@ -426,7 +426,9 @@ Estilo de degradado en el texto:
 
 Clases de utilidad: Sólo tienen un obj, en este caso, centrar el texto y se pueden reutilizar
 en otras partes del código. Ponerla en la sección de utilities en la carpeta "base"
- crear un div (u-center-text) que envuelva al heading-secondary
+ crear un div (u-center-text) que envuelva al heading-secondary.
+
+Se usan para evitar poner un margin bottom
 
     Definir otra clase de utilidad para definir un espacio en blanco entre el texto de 
     heading-secondary y las dos columnas de float layout
@@ -496,6 +498,55 @@ lados a la tarjeta principal. -> height: 40rem;
 Agregar la propiedad ease para que el giro de la tarjeta no se vea tan marcado
 
 
+=======================================
+      Sección de historias
+=======================================
+
+Crear en el html una nueva sección, section-stories.
+Agregar story como componente e importarlo al main
+
+Para hacer que el texto rodee la forma del círculo, se usa shape-outside
+
+Para mover un objeto flotante, no es recomendable hacerlo con márgenes. Entonces usar 
+translate: transform: translateX(-3rem);
+Ahora el círculo ocupa una distancia más allé del padding definido, usar padding-left en
+_story -> shape
+
+Para un diseño responsivo, las imágenes SIEMPRE necesitan un width. Para arreglar la imagen
+de los testimonios, agregarles una clase.
+
+& > * {//los hijos de este elemento
+
+No se puede tener más de un transform en una propiedad
+
+Para poner texto en figuras se usa figcaption:
+  Para centrar el texto del hover
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); (x,y)
+        text-align: center;
+
+Para centrar la imagen nosotros mismos: usar transform: translateX(-3rem);
+
+backface-visibility: hidden;//Común usarla para solucionar problemas con las animaciones
+
+=====================================
+    Para poner el video de fondo
+=====================================
+
+Crear un elemento dentro de la sección, el cual será el video y hacer que tenga las mismas dimensiones
+que la sección, luego ponerlo de fondo.
+Para los atributos del video: autoplay muted loop, loop hará que se repita
+Crear _bg_video como un nuevo componente e importarlo, para que se pueda usar esta función
+en otras partes del programa.
+Para que tenga las mismas dimensiones que el padre, se hace: width y height =100% (del padre)
+
+Para que el video esté por encima de todos los elementos se le pone un índice z (-)
+
+object-fit: cover;//similar al de las img, pero este funciona para elementos html, en este caso
+para el video de fondo., también funciona para las img
+
+Cuando un elemento se desborda, se usa overflow: hidden;
 
 
 */
