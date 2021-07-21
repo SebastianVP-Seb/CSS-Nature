@@ -548,5 +548,73 @@ para el video de fondo., también funciona para las img
 
 Cuando un elemento se desborda, se usa overflow: hidden;
 
+==================================
+          Sección Book
+==================================
+
+Crear la sección book. Y trabajando con el archivo _form.scss
+background-image: linear-gradient(75deg, rgba($color-white,.8), hotpink), url(../img/Nesbyen.jpg);
+Se pone primero el que irá encima, en este caso, el gradiente. Es opcional especificar los grados
+de inclinación.
+También se puede especificar con porcentajes
+background-size: 100%;//es lo mismo que cover
+
+Los porcentajes van al lado del color, el degradado se aplica en el intervalo de porcentajes 
+que no está definido
+background-image: linear-gradient(75deg, 
+                    rgba($color-white,.8) 0%, 
+                    hotpink 50%), 
+                    url(../img/Nesbyen.jpg);
+
+Para los formularios se usa form en html
+La etiqueta input no se cierra.
+
+<!--El id del input se asocia con el for del label, si se da click en 
+    el label, el input también se seleccionará--> en el HTML
+
+Agregar el componente form e importarlo
+
+font-familie: inherit; Para que herede la familia de fuente
+
+Se puede usar el atributo válido o inválido, y definir cada uno. En este caso para los inputs
+
+margin-left: 2rem;
+margin-top: 5rem;
+display: block;//necesario ponerlo para que funcionen las propiedades del margen (modelos de caja)
+
+Selector de elementos hermanos:
+  + Selecciona el elemento siguiente al que se ha seleccionado.
+  ~ Selecciona todos los elementos hermanos que están dentro de un contenedor
+Siempre tienen que estar después del elemento que se selecciona primero
+
+placeholder-shown indica cuando el placeholder es visible.
+
+opacity: 0;
+visibility: hidden;
+//opacity y visibility se deben usar juntas porque la visibilidad no se puede animar, y al
+//establecer visibility hidden: el label desaparece de la pág, si sólo se usara opacity, el 
+//label seguiría estando en la pág
+
+Para los radio buttons:-------------------------------------------
+Para que al seleccionar uno, el otro se des seleccione, en el html ponerles el mismo nombre con name
+Adentro del label crear un span, éste será el diseño del radio button
+
+-------------------------------------------------------------------
+Los pseudoelementos se consideran hijos del elemento que los contiene ($ 10 .00)
+Donde: "$" es before
+       ".00" es after
+       Y el elemento padre es el contenedor (p, div, h2...) que contiene al "10"
+Siempre requieren la propiedad content, ya sea con contenido o vacía -> content:""; content:"$";
+Son in-line, por defecto
+Siempre requieren la propiedad display, ya que los in-line, no tienen dimensiones.
+Se comportan como un div.
+display: block; -> los elementos se ponen en columna
+display: inline-block; -> los elementos se ponen en línea
+
+En el html checked="checked" hará que el botón aparezca ya seleccionado.
+
+Siempre que se use un pseudo-elemento se establece content y display
+
+Para el envío de formulario se usan botones no anclajes (a)
 
 */

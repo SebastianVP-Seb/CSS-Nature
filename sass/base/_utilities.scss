@@ -1,17 +1,21 @@
 .u-center-text {
-    text-align: center;
+    text-align: center !important;
 }
 
 .u-margin-bottom-big {
-    margin-bottom: 7rem;
+    margin-bottom: 7rem !important;
+}
+
+.u-margin-bottom-medium {
+    margin-bottom: 4rem !important;
 }
 
 .u-margin-bottom-small {
-    margin-bottom: 2rem;
+    margin-bottom: 2rem !important;
 }
 
 .u-margin-top-big {
-    margin-top: 47rem;
+    margin-top: 47rem !important;
 }
 
 .parpadea {
@@ -31,7 +35,7 @@
     letter-spacing: .8rem;
 }
   
-  @keyframes parpadeo {  
+@keyframes parpadeo {  
     0% {
         opacity: 1.0; 
         color: hotpink;
@@ -48,4 +52,35 @@
         opacity: 1.0; 
         color:lime;
     }
-  }
+}
+
+@keyframes parpadeo1 {  
+    0% {
+        opacity: 1.0; 
+        color: $color-black;
+    }
+    50% {
+        opacity: 1.0; 
+        color: rgb(255, 136, 0);
+    }
+    100% { 
+        opacity: 1.0; 
+        color:rgb(66, 71, 66);
+    }
+}
+
+.u-clase-parpadea1 {
+    font-family: 'Risque', cursive;
+    font-size: 2.7rem;
+    font-weight: 100;
+    
+    display: inline-block; //junta el texto con el background-image
+    color: transparent;//para que se vea el color del gradiente
+    letter-spacing: .8rem;
+
+    animation-name: parpadeo1;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+  

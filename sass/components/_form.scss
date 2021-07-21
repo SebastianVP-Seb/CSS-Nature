@@ -1,0 +1,211 @@
+.form {
+
+    &_input {
+        width: 90%;
+        display: block;
+        font-size: 1.5rem;
+        font-family: 'Risque', cursive;
+        padding: 1.1rem 1.4rem;//arriba y abajo  derecha e izquierda
+        border-radius: .2rem;
+        border: none;
+        background-color: rgba($color-white, .4);
+        border-bottom: .2rem solid transparent;
+        transition: all 1s;//Para darle la animación al cambio de color del border-bottom
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color-black, .7);
+            //border-width, border-style border-color
+            border-bottom: .2rem solid rgb(54, 240, 7);
+
+            &:invalid {
+                border-bottom: .2rem solid rgb(240, 7, 7);
+            }
+        }
+
+        //pseudoelemento
+        &::-webkit-input-placeholder {
+            color: rgba(165, 42, 42, 1);
+        }
+    }
+
+    &_label {
+        font-size: 1.4rem;
+        font-family: 'Risque', cursive;
+        margin-left: 1.5rem;
+        margin-top: .8rem;
+        display: block;//necesario ponerlo para que funcionen las propiedades del margen
+        transition: all 1s;
+        color: rgb(150, 89, 31);
+    }
+
+    &_input:placeholder-shown + &_label {//Selector de elementos hermanos (+)
+        //placeholder-shown indica cuando el placeholder es visible
+        opacity: 0;
+        visibility: hidden;
+        //opacity y visibility se deben usar juntas porque la visibilidad no se puede animar, y al
+        //establecer visibility hidden: el label desaparece de la pág, si sólo se usara opacity, el 
+        //label seguiría estando en la pág
+        transform: translateY(-4rem);
+    }
+
+    //Tutorial Youtube 1--------------------------------
+
+    &_radio-input1 {
+        position: relative;
+        transform: translateY(.5rem);
+        -webkit-appearance: none;
+        width: 7rem;
+        height: 2rem;
+        border-radius: 2rem;
+        outline: none;
+        box-shadow: //-.5rem -.5rem 2rem rgba(165, 42, 42, 0.726), 
+        //             .5rem .5rem 1rem rgba(165, 42, 42, 0.726), 
+                    inset -.2rem -.2rem .5rem rgba(90, 88, 87, 1), 
+                    inset .2rem .2rem .5rem rgba(12, 12, 12, 1);
+        transition: .5s;
+        
+        &:checked {
+            background-color: rgb(255, 8, 0);
+        }
+
+        &:checked + label {
+            color:hotpink;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 4.5rem;
+            height: 2rem;
+            border-radius: 2rem;
+            background-color: rgba(27, 26, 26, 0.926);
+            
+            box-shadow: 0 0 0 .1 #232323;
+            transition: .5s;
+        }
+
+        &:checked::before {
+            left: 2.5rem;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: .5rem;
+            height: .5rem;
+            border-radius: 50%;
+            top: 40%;
+            left: 35%;
+            transition: .5s;
+        }
+
+        &:checked::after {
+            left: calc(2.5rem + 45%);
+            background-color: deeppink;
+            box-shadow: 0 0 .9rem deeppink;
+        }
+    }
+    
+    &_radio-label1 {
+        font-size: $default-font-size;
+        font-family: 'Risque', cursive;
+    }
+    //Fin del tutorial 1-----------------------------------------
+
+    //Tutorial Youtube 2-----------------------------------------
+    &_youtube-2 {//este es el input
+        position: relative;
+        display: inline-block;
+        -webkit-appearance: none;
+        width: 4rem;
+        outline: none;
+
+        &:checked + label {
+            color: white;
+            background-color: hotpink;
+            transition: .5s;
+            border: .2rem solid rgb(158, 9, 83);
+        }
+
+        &:checked + label::before {
+            height: .2rem;
+            width: .2rem;
+            border: 1rem solid rgb(158, 9, 83);
+            background-color: hotpink;
+        }
+    }
+    
+    &_youtube-label {
+        border: .2rem solid hotpink;
+        border-radius: .5rem;
+        padding: .5rem 1rem;
+        color:hotpink;
+        font-size: 1.4rem;
+        font-family: 'Risque', cursive;
+
+        &:before {
+            content: "";
+            transform: translateY(.5rem);
+            height: 2rem;
+            width: 2rem;
+            border: 3px solid hotpink;
+            border-radius: 50%;
+            margin-right: 1.2rem;
+            display: inline-block;//Para que se puedan usar las medidas de height y width
+        }
+        
+    }//Fin del tutorial 2---------------------------------------------
+    
+
+    &_radio-group {
+        // width: 47%;//Este es para el grupo de botones 1------------------------
+        display: inline-block;//Pone los botones uno al lado del otro
+        width: 49%;//Este se usa para los botones de la clase
+    }
+
+    &_radio-input {
+        display: none;
+    }
+    &_radio-label {
+        
+        font-size: $default-font-size;
+        font-family: 'Risque', cursive;
+        position: relative;
+        padding-left: 4.5rem;
+        
+        position: relative;
+    }
+
+    &_radio-button {
+        
+        height: 3rem;
+        width: 3rem;
+        border: .5rem solid rgba($color-black, .7);
+        border-radius: 50%;
+        display: inline-block;//Para que tome las medidas de height y width
+        position: absolute;
+        top: -.6rem;
+        left: 0;
+
+        &::after {
+            content: "";
+            display: block;
+            height: 1.3rem;
+            width: 1.3rem;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $color-primary;
+            opacity: 0;
+        }
+    }
+
+    &_radio-input:checked ~ &_radio-label &_radio-button::after {
+        opacity: 1;
+    }
+}

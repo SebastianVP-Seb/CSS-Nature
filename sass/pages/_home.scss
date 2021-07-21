@@ -52,9 +52,44 @@
     color: $color-black;
     // font-size: 10rem;
     padding: 9.5rem 0 11rem 0;
-
     // background-color: lavender; si no se quita, no se ve el video
-    
     position: relative;
-    
 }
+
+.section-book {
+    padding: 10rem 7rem 10rem 7rem;
+    background-image: linear-gradient(to top left,#FF5722,#FFC107);
+}
+
+.book {
+    // background-image: url(../img/Nesbyen.jpg);
+    background-image: linear-gradient(75deg, 
+                    rgba($color-white,.8) 0%, 
+                    rgba($color-white,.8) 49%, 
+                    transparent 55%), 
+                    url(../img/Nesbyen.jpg);
+    
+    border-radius: .6rem;
+    box-shadow: 0 2rem 4rem rgba(#FFEB3B, .6);
+
+    height: 50rem;//Para ver la img
+
+    //Para el formulario
+    &_form {
+        width: 50%;
+        padding: 5rem;
+    }
+}
+
+// .clase-relative {                  Mi intento del polígono transparente, funciona
+//     position: relative;
+// }
+
+// .espacio-blanco {
+//     background-color: rgba(#bb9f968c,.8);
+//     float: left;
+//     clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+//     position: absolute;
+//     width: 55%;
+//     height: 100%;
+// }
