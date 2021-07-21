@@ -1,0 +1,66 @@
+.footer {
+    background-color: #333;
+    font-family: 'Sevillana', cursive;
+    padding: 10rem 0;
+    font-size: 1.4rem;
+    color: azure;
+    height: 60rem;
+
+    &_logo--box {
+        text-align: center;//centra la imagen
+        margin-bottom: 8rem;
+    }
+
+    &_logo {
+        width: 15rem;
+        height: auto;
+    }
+
+    &_navigation {
+        border-top: .1rem solid azure;
+        padding-top: 1rem;
+        display: inline-block;//En inline-block sólo ocupan el espacio que necesitan
+        //un bloque en línea no ocupa el 100% de su ancho
+
+    }
+
+    &_list {
+        list-style: none;
+    }
+
+    &_item {
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right: 1.5rem;
+        }
+    }
+
+    &_link {
+        &:visited,
+        &:link {
+            color:rgb(207, 214, 214);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        &:hover,
+        &:active {
+            color:aqua;
+            background-color: #333;
+            box-shadow: 0 1rem 2rem aquamarine;
+            border-radius: 30%;
+            transform: rotate(-6deg) scale(1.2);
+            transition: all .3s;
+        }
+    }
+
+    &_copyright {
+        font-size: 2rem;
+        border-top: .1rem solid azure;
+        color: azure;
+        padding-top: 1rem;
+        width: 85%;
+        // float: right;
+    }
+}

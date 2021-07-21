@@ -617,4 +617,11 @@ Siempre que se use un pseudo-elemento se establece content y display
 
 Para el envío de formulario se usan botones no anclajes (a)
 
+====================================================
+            FOOTER
+====================================================
+
+Crear el footer en el html debajo del main.
+Agregar _footer a la carpeta layout e importarlo en el main
+
 */

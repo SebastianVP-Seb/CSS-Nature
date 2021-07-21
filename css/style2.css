@@ -702,6 +702,47 @@ body {
     /* background-color: aqua; */
     text-align: center; }
 
+.footer {
+  background-color: #333;
+  font-family: 'Sevillana', cursive;
+  padding: 10rem 0;
+  font-size: 1.4rem;
+  color: azure;
+  height: 60rem; }
+  .footer_logo--box {
+    text-align: center;
+    margin-bottom: 8rem; }
+  .footer_logo {
+    width: 15rem;
+    height: auto; }
+  .footer_navigation {
+    border-top: .1rem solid azure;
+    padding-top: 1rem;
+    display: inline-block; }
+  .footer_list {
+    list-style: none; }
+  .footer_item {
+    display: inline-block; }
+    .footer_item:not(:last-child) {
+      margin-right: 1.5rem; }
+  .footer_link:visited, .footer_link:link {
+    color: #cfd6d6;
+    text-decoration: none;
+    display: inline-block; }
+  .footer_link:hover, .footer_link:active {
+    color: aqua;
+    background-color: #333;
+    box-shadow: 0 1rem 2rem aquamarine;
+    border-radius: 30%;
+    transform: rotate(-6deg) scale(1.2);
+    transition: all .3s; }
+  .footer_copyright {
+    font-size: 2rem;
+    border-top: .1rem solid azure;
+    color: azure;
+    padding-top: 1rem;
+    width: 85%; }
+
 .section-about {
   background-color: #e6e6e6;
   padding: 15rem 0;
