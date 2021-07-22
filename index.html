@@ -30,6 +30,27 @@
         <!-- <link rel="stylesheet" href="css/icon-font.css"> -->
         <!-- <link rel="stylesheet" href="css/style.css"> -->
 
+        <!-- Para fuentes externas -->
+        <style type="text/css">
+            @font-face {
+                font-family: graffiti1;
+                src: url(/sass/abstracts/Mostwasted.ttf) format("truetype");
+            }
+            @font-face {
+                font-family: graffiti2;
+                src: url(/sass/abstracts/elFont.ttf) format("truetype");
+            }
+            @font-face {
+                font-family: graffiti3;
+                src: url(/sass/abstracts/Scrawl.otf) format("opentype");
+            }
+            @font-face {
+                font-family: graffiti4;
+                src: url(/sass/abstracts/RUFA.ttf) format("truetype");
+            }
+        
+        </style>
+
         <link rel="stylesheet" href="css/icofont.css">
         <link rel="stylesheet" href="css/style2.css">
         <link rel="shortcut icon" type="image/png" href="img/favicon.png">
@@ -38,22 +59,38 @@
     </head>
     <body>
 
-        <header class="header">
+        <div class="navigation">
+            <input type="checkbox" id="check" class="navigation_checkbox">
 
+            <label for="check" class="navigation_button">
+                <span class="navigation_icon">&nbsp;</span>
+            </label>
+
+            <div class="navigation_background">&nbsp;</div>
+
+            <nav class="navigation_nav">
+                <ul class="navigation_list">
+                    <li class="navigation_item"><a href="#" class="navigation_link">Around the world</a></li>
+                    <li class="navigation_item"><a href="#" class="navigation_link">Alok & Sevenn</a></li>
+                    <li class="navigation_item"><a href="#" class="navigation_link">Frequency 75</a></li>
+                    <li class="navigation_item"><a href="#" class="navigation_link">Let me feel</a></li>
+                    <li class="navigation_item"><a href="#" class="navigation_link">When we are wild</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <header class="header">
             <div class="header__logo-box">
                 <img class="header__logo" src="img/logo-white.png" alt="logo">
             </div>
-
             <div class="header__text-box">
                 <h1 class="heading-primary"><!--Este se puede ver como un bloque independiente -->
                     <span class="heading-primary--main">Sebastian</span>
                     <span class="heading-primary--sub">Vázquez Palacios</span>
                 </h1>
-
                 <a href="#" class="btn btn--white btn--animated">Hello!!! My name is...</a>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, architecto dolore iste cupiditate iusto illum? Molestias aspernatur impedit quibusdam architecto minus necessitatibus eaque, rem suscipit mollitia facere maiores tenetur aliquid.</p>
+                <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, architecto dolore iste cupiditate iusto illum? Molestias aspernatur impedit quibusdam architecto minus necessitatibus eaque, rem suscipit mollitia facere maiores tenetur aliquid.</p> -->
             </div>
-
         </header>
 
         <main>

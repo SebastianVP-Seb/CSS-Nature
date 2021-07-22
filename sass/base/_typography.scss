@@ -1,7 +1,8 @@
 body {
-    font-family: 'Fuggles', cursive;
+    // font-family: 'Fuggles', cursive;
+    font-family: graffiti1;
     font-weight: 400;
-    /* font-size: 16px; ahora la fuene es de 10px en el selector HTML*/ 
+    font-size: 2.8rem;// ahora la fuene es de 10px en el selector HTML
     line-height: 1.7;
     color: $color-grey;
     padding: 3rem;
@@ -15,7 +16,7 @@ body {
     
     &--main {
         display: block;
-        font-size: 6rem;
+        font-size: 9rem;
         font-weight: 400;
         letter-spacing: 2.5rem;
     
@@ -36,7 +37,8 @@ body {
 
 .heading-secondary {
     text-transform: uppercase;
-    font-family: 'Bona Nova', serif;
+    // font-family: 'Bona Nova', serif;
+    font-family: graffiti4;
     font-size: 3.5rem;
     font-weight: 700;
     //Para el degradado en el texto

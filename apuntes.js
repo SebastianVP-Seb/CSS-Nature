@@ -624,4 +624,38 @@ Para el envío de formulario se usan botones no anclajes (a)
 Crear el footer en el html debajo del main.
 Agregar _footer a la carpeta layout e importarlo en el main
 
+
+====================================================
+            Para el menú hamburguesa
+====================================================
+
+Tener casilla de verificación
+Tener una etiqueta conectada a esa casilla
+Presentar la navegación cuando la casilla está en check
+
+Crear al inicio del body un div con la clase navigation
+Crear archivo navigation en layout e importarlo en el main
+
+Para centrar vertical y horizontalmente:
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+
+Para crear el efecto hover, usar el gradiente de color.
+  background-position: determinará cuando entre en cambio el color negro, y background-size
+  det la inclinación del color que entra en el hover
+
+Para activar el menú dando click en el botón hambirguesa, se tocará el label y automáticamente
+el check se activa
+
+====================================================
+          Para el botón del menú hamburguesa
+====================================================
+
+Se utilizará un span, luego sus pseudoelementos before y after, al hacer click, el span principal
+desaparecerá y los otros dos rotarán para formar una cruz
+
+Transform origin------------------------
+Describe donde ocurre la transformación
 */
