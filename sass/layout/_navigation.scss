@@ -1,0 +1,162 @@
+.navigation {
+    // position: relative;
+
+    &_checkbox {
+        display: none;
+    }
+
+    &_button {//estas dimensiones deben ser más grandes para cubrir las dimensiones del elemento del background
+        height: 7.5rem;
+        width: 7.5rem;
+        position: fixed;
+        top: 3.5rem;
+        right: 3.5rem;
+        background-color: $color-primary;
+        border-radius: 50%;
+        z-index: 102;
+        box-shadow: 0 1rem 2rem $color-black;
+
+        text-align: center;//para centrar el menú hamburguesa
+    }
+
+    &_background {
+        // position: absolute;
+        height: 6rem;
+        width: 6rem;
+        position: fixed;
+        top: 4.3rem;
+        right: 4.2rem;
+        background-image: radial-gradient(rgb(1, 172, 172),aqua);
+        clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+        z-index: 100;//para que no se esconda tras los elementos ya creados al hacer scroll
+        // transform: scale(37);//Para ver como crece el círculo (probando)
+        transition: all .8s;
+    }
+
+    &_nav {//debe cubrir el 100%vh
+        height: 100vh;
+        // width: 100%;//no es necesario especificar, porque los elementos en bloque ocupan el 100% de
+                    //su ancho
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 101;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 3s;
+    }
+
+    &_list {//esta lista debe estar centrada
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        list-style: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    &_item {
+        margin: 1rem;
+    }
+
+    &_link {
+        &:link,
+        &:visited {
+            display: inline-block;
+            font-size: 3.7rem;
+            font-weight: 300;
+            color: $color-white;
+            text-decoration: none;
+            padding: 1rem 2.5rem;
+            // margin-bottom: .5rem;
+            letter-spacing: 1rem;
+            font-family: graffiti4;
+            background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-black 50%);
+            background-size: 220%;
+            transition: all .7s;
+        }
+
+        &:hover,
+        &:active {
+            background-position: 100%;
+            color: aqua;
+            text-shadow: 0 .5rem .5rem white;
+            transform: translateY(-1rem);//para que funcione bien, los elementos se deben desplegar 
+                        //inline.block
+        }
+    }
+
+    //Para la funcionalidad
+    //Con el selector de hermanos se selecciona el background, ya que no es el adyacente no se
+    //puede usar el +
+    &_checkbox:checked ~ &_background {
+        transform: scale(37);
+    }
+    
+    &_checkbox:checked ~ &_nav {//para que aparezca el contenido del menú hamburguesa
+        width: 100%;
+        visibility: visible;
+        opacity: 1;
+        transition-delay: .4s;
+    }
+
+    //Para el ícono
+    &_icon {
+        position: relative;
+        margin-top: 3.7rem;
+
+        &,//el elemento en sí
+        &::before,
+        &::after {
+            width: 3rem;
+            height: .2rem;
+            background-color: hotpink;
+            display: inline-block;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0%;
+            transition: all .7s;
+        }
+
+        &::after {
+            top: .7rem;
+        }
+
+        &::before {
+            top: -.7rem;
+        }
+    }
+    //Para hacer el hover
+    &_button:hover &_icon::before {
+        top: -1rem;
+    }
+
+    &_button:hover &_icon::after {
+        top: 1rem;
+    }
+
+    //Hacer que desaparezca el span cuando el checkbox esté en check
+    &_checkbox:checked + &_button &_icon {
+        background-color: transparent;
+    }
+
+    //Rotar los pseudoelementos
+    &_checkbox:checked + &_button &_icon::before {
+        // transform: skew(90deg);1
+        // transform: skewY(50deg);
+        transform: rotate(135deg);
+        top: 0rem;
+    }
+
+    &_checkbox:checked + &_button &_icon::after {
+        // transform: skew(-90deg);1
+        // transform: skewY(-50deg);
+        transform: rotate(-135deg);
+        top: 0rem;
+    }
+}
