@@ -658,4 +658,48 @@ desaparecerá y los otros dos rotarán para formar una cruz
 
 Transform origin------------------------
 Describe donde ocurre la transformación
+
+
+====================================================
+          Ventana desplegable
+====================================================
+
+En el html crear después del footer un div llamado popup.
+En la carpeta components crear un archivo llamado popup e importarlo al main
+position: fixed; para que un elemento quede fijo en la pantalla
+Para que dos elementos tengan la misma altura, en ellos se usa display: table-cell y en el 
+contenedor se usa display: table
+1em siempre es el tamaño de la fuente actual en el contenedor que se esté trabajando.
+
+hyphens: auto; separa las palabras en sílabas. En auto, automáticamente descubrirá donde poner
+el guión. En manual, nosotros lo especificamos. 
+Para que funcione, se debe especificar el lengaueje al inicio de la etiqueta html.
+
+Anclas para la ventana despegable:
+  Se le coloca un id a una sección, y luego con un ancla (a) se manda a llamar ese id:
+
+<a href="#section-tours"
+
+Añadir a la hoja scss la pseudoclase "target" (el objetivo) 
+
+opacity: 1;
+visibility: visible;
+
+Añadir el id popup a la sección popup y anclarlo en la parte posterior de las tarjetas
+
+Display: none; para dejar de ver un elemento.
+recomendable usar: opacity: 0;
+                    visibility: hidden;
+
+
+
+
+
+
+
+
+
+
+
+
 */

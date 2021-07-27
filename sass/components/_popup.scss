@@ -1,0 +1,121 @@
+.popup {
+    background-color: #96a09cd7;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    font-size: 1rem;
+    // filter: blur(4rem) brightness(.8);
+
+    //////////////Para ocultarlo momentáneamente:
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all 1s;
+
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    //Para cerrar el popup
+    &_close {
+        &:link,
+        &:visited {
+            color: blueviolet;
+            position: absolute;
+            text-decoration: none;
+            top: 2rem;
+            right: 2rem;
+            font-size: 5rem;
+            // display: inline-block;
+            line-height: 1;//para que se posicione bien, ya que es texto
+
+            transition: all 1s;
+            z-index: 2000;
+        }
+
+        &:hover {
+            color: chartreuse;
+        }
+    }
+
+    &_content {
+        background-color: rgb(41, 41, 41);
+        width: 85%;
+        // height: 50rem;
+        box-shadow: 0 2rem 4rem rgba($color-black, .6);
+        @include centrar;
+        border-radius: .5rem;
+        display: table;
+        overflow: hidden;
+
+        //estado inicial para desplegar la ventana
+        // Se tiene que repetir lo definido en el transfor del mixin, sólo puede haber un transmorn 
+        // en un bloque de decoración. Luego escalarlo al 100% cuando la ventana se despliegue
+        opacity: 0;
+        transform: translate(-50%,-50%) scale(.2);
+        transition: all 1s .1s;
+        //el tercer parámetro es el delay (retraso en la animación
+    }
+
+    //animando el content cuando la ventana está abierta (cuando el popup es el objetivo)
+    &:target &_content {
+        opacity: 1;
+        transform: translate(-50%,-50%) scale(1);
+    }
+    
+    &_left {
+        width: 33.333333333333333%;
+        display: table-cell;
+    }
+    
+    &_img {
+        display: block;
+        width: 100%;
+    }
+    
+    &_right {
+        width: 33.333333333333333%;
+        display: table-cell;
+        vertical-align: middle;//bottom, top
+        padding: 2rem 3rem;
+    }
+
+    &_text {
+        margin-bottom: 3rem;
+        font-family: 'Gruppo', cursive;
+        color: snow;
+        column-count: 2;
+        // column-gap: 1rem;//Separación entre columnas
+        column-rule: .1rem solid magenta;//línea entre columnas
+        -webkit-hyphens: auto;
+        hyphens: auto;
+    }
+
+    &_center {
+        width: 33.333333333333333%;
+        display: table-cell;
+    }
+
+    &_graf3 {
+        font-family: graffiti2;
+        color: springgreen;
+        font-size: 1.3rem;
+    }
+
+    &_graf4 {
+        font-family: graffiti3;
+        background-image: linear-gradient(to right, $color-white,$color-primary-light);
+        display: inline-block; //junta el texto con el background-image
+        -webkit-background-clip: text;//hace que el fondo se recorte exactamente donde está el texto
+        color: transparent;//para que se vea el color del gradiente
+        font-size: 2.5rem;
+    }
+
+    // &_btn-auxq {
+
+    // }
+}

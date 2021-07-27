@@ -676,6 +676,84 @@ body {
 .form_radio-input:checked ~ .form_radio-label .form_radio-button::after {
   opacity: 1; }
 
+.popup {
+  background-color: #96a09cd7;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  font-size: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s; }
+  .popup:target {
+    opacity: 1;
+    visibility: visible; }
+  .popup_close:link, .popup_close:visited {
+    color: blueviolet;
+    position: absolute;
+    text-decoration: none;
+    top: 2rem;
+    right: 2rem;
+    font-size: 5rem;
+    line-height: 1;
+    transition: all 1s;
+    z-index: 2000; }
+  .popup_close:hover {
+    color: chartreuse; }
+  .popup_content {
+    background-color: #292929;
+    width: 85%;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: .5rem;
+    display: table;
+    overflow: hidden;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2);
+    transition: all 1s .1s; }
+  .popup:target .popup_content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); }
+  .popup_left {
+    width: 33.333333333333333%;
+    display: table-cell; }
+  .popup_img {
+    display: block;
+    width: 100%; }
+  .popup_right {
+    width: 33.333333333333333%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 2rem 3rem; }
+  .popup_text {
+    margin-bottom: 3rem;
+    font-family: 'Gruppo', cursive;
+    color: snow;
+    column-count: 2;
+    column-rule: .1rem solid magenta;
+    -webkit-hyphens: auto;
+    hyphens: auto; }
+  .popup_center {
+    width: 33.333333333333333%;
+    display: table-cell; }
+  .popup_graf3 {
+    font-family: graffiti2;
+    color: springgreen;
+    font-size: 1.3rem; }
+  .popup_graf4 {
+    font-family: graffiti3;
+    background-image: linear-gradient(to right, #ffffff, #c728ac);
+    display: inline-block;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 2.5rem; }
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to left top, rgba(68, 38, 204, 0.74), rgba(199, 40, 172, 0.75)), url(../img/AJlewFN6EZk.jpg);
