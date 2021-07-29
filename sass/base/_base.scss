@@ -9,8 +9,39 @@
 html {
     /* font-size: 10px; Por comodidad (1rem=10px) */
     font-size: 62.5%; /*Permitirá hacer zoom a la pág... lo que queremos/16: 10/16=.625*/
+
+    ////////////////// Para media queries
+    //Del archivo mixins
+    // @include respond(phone) { esta media querie no se necesita porque 900px y 600px seguirían siendo 
+    //     mayores que 500 px, por lo que ambos códigos en el media querie se aplicarían
+    //     font-size: 50%;
+    // }
+    @include respond(tab-land) {
+        font-size: 56.25%;
+        //Queremos que 1rem=9px -> 9/16=56.25%
+    }
+    @include respond(tab-port) {//Se aplica el último que esté en el código
+        //si se pone al principio, al disminuir la pantalla, entrará en conflicto porque 500px
+        //serían menor que 900px y 600px, y el tamaño no fuente no se haría más pequeña, por eso
+        //esta condición se pone "al final"
+        font-size: 50%;
+        //Queremos que 1rem=8px -> 8/16=50%
+    }
+    @include respond(phone) {
+        font-size: 37.5%;
+        //Queremos que 1rem=6px -> 6/16=75%
+    }
+    @include respond(big-desk) {
+        font-size: 75%;
+        //Queremos que 1rem=12px -> 12/16=75%
+    }
 }
 
 body {
     box-sizing: border-box;
+    padding: 3rem;
+
+    @include respond(tab-port) {
+        padding: 0;
+    }
 }

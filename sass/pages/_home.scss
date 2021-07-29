@@ -3,6 +3,16 @@
     padding: 15rem 0;
     margin-top: -15vh;
     height: 95rem;
+
+    @include respond(tab-port) {
+        height: 135rem;
+        padding: 11rem 0;
+    }
+
+    @include respond(phone) {
+        height: 130rem;
+        padding: 11rem 0;
+    }
 }
 
 .section-features {
@@ -19,6 +29,16 @@
 
     & > * {
         transform: skewY(7deg);
+    }
+
+    @include respond(tab-port) {
+        height: 140rem;
+    }
+
+    @include respond(phone) {
+        height: 118rem;
+        margin-top: -12rem;
+        padding: 10rem 5rem;
     }
 }
 
@@ -45,6 +65,11 @@
             background-image: linear-gradient(to bottom, $color-primary,$color-primary-light);
         }
     }
+
+    @include respond(phone) {
+        height: 260rem;
+        margin-top: -11rem;
+    }
 }
 
 .section-stories {
@@ -54,11 +79,31 @@
     padding: 9.5rem 0 11rem 0;
     // background-color: lavender; si no se quita, no se ve el video
     position: relative;
+
+    @include respond(tab-land) {
+        padding: 6.5rem 0 10rem 0;
+    }
+
+    @include respond(phone) {
+        padding: 5rem 0 9rem 0;
+    }
 }
 
 .section-book {
     padding: 10rem 7rem 10rem 7rem;
     background-image: linear-gradient(to top left,#FF5722,#FFC107);
+
+    @include respond(tab-port) {
+        height: 87rem;
+        // display: block;
+        padding: 8rem 5rem 5rem 5rem;
+    }
+
+    @include respond(phone) {
+        height: 75rem;
+        // display: block;
+        padding: 7rem 3rem 3rem 3rem;
+    }
 }
 
 .book {
@@ -72,12 +117,44 @@
     border-radius: .6rem;
     box-shadow: 0 2rem 4rem rgba(#FFEB3B, .6);
 
-    height: 50rem;//Para ver la img
+    // height: 50rem;//Para ver la img
+
+    @include respond(tab-port) {
+        background-image: linear-gradient(75deg, 
+                    rgba($color-white,.8) 0%, 
+                    rgba($color-white,.8) 65%, 
+                    transparent 50%), 
+                    url(../img/Nesbyen.jpg);
+
+        background-size: cover;
+    }
+
+    @include respond(phone) {
+        background-image: linear-gradient(to right, 
+                    rgba($color-white,.8) 0%, 
+                    rgba($color-white,.8) 100%), 
+                    url(../img/Nesbyen.jpg);
+
+        background-size: cover;
+    }
 
     //Para el formulario
     &_form {
         width: 50%;
         padding: 5rem;
+
+        @include respond(tab-port) {
+            width: 100%;
+        }
+
+        @include respond(phone) {
+            width: 100%;
+        }
+
+        // @include respond(tab-port) {
+        //     width: 100%;
+        //     padding: 3rem;
+        // }
     }
 }
 

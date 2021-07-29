@@ -13,3 +13,40 @@
     transform: translate(-50%,-50%);
     // margin: 0 auto;
 }
+
+/////////////////////// MEDIA QUERIES ///////////////////////////
+/*
+0 - 600px -> phone
+600 - 900px -> tablet portrait
+900 - 1200 -> tablet landscape
+1200 - 1800 -> donde nuestro diseño se aplica
+1800 - + -> pantallas grandes
+
+Content directive: @content: permite analizar un bloque de código en un mixin y mandarlo a llamar donde
+queremos que se aplique. En donde se mande a llamar se escribe el código que queremos ejecute.
+Estos se mandan a llamar en el bloque html en el archivo base.
+Donde se mande a llamar se pasa el parámetro del mixin (phone, tab-port, ...) y se ejecuta el código 
+definido en donde se manda a llamar
+*/
+/*
+1em=16px -> ahora convertir: a em
+600 -> 600 / 16 -> 37.5
+900 -> 56.25
+1200 -> 75em
+1800 -> 112   Luego, automáticamente esto se convertirá a px, y se adaptará al tamaño de fuente que 
+el usuario haya definido para el navegador
+*/
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) {@content}
+    }
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em) {@content}
+    }
+    @if $breakpoint == tab-land {
+        @media (max-width: 75em) {@content}
+    }
+    @if $breakpoint == big-desk {
+        @media (min-width: 112.5em) {@content}
+    }
+}

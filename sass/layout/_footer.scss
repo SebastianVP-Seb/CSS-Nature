@@ -6,9 +6,23 @@
     color: azure;
     height: 60rem;
 
+    @include respond(tab-land) {
+        padding: 6rem 0;
+    }
+
     &_logo--box {
         text-align: center;//centra la imagen
         margin-bottom: 8rem;
+
+        @include respond(tab-land) {
+            margin-bottom: 6rem;
+        }
+
+        @include respond(phone) {
+            margin-bottom: 4rem;
+        }
+    
+    
     }
 
     &_logo {
@@ -22,6 +36,10 @@
         display: inline-block;//En inline-block sólo ocupan el espacio que necesitan
         //un bloque en línea no ocupa el 100% de su ancho
 
+        @include respond(tab-port) {
+            width: 100%;
+            text-align: center;
+        }
     }
 
     &_list {
@@ -62,5 +80,10 @@
         padding-top: 1rem;
         width: 85%;
         // float: right;
+
+        @include respond(tab-port) {
+            width: 100%;
+            float: none;
+        }
     }
 }

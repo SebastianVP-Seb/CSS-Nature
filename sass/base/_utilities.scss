@@ -3,7 +3,14 @@
 }
 
 .u-margin-bottom-big {
-    margin-bottom: 7rem !important;
+    margin-bottom: 7rem;
+
+    @include respond(tab-land) {
+        margin-bottom: 5rem;
+    }
+    @include respond(phone) {
+        margin-bottom: 5rem;
+    }
 }
 
 .u-margin-bottom-medium {
@@ -15,7 +22,14 @@
 }
 
 .u-margin-top-big {
-    margin-top: 47rem !important;
+    margin-top: 7rem !important;
+
+    @include respond(tab-land) {
+        margin-bottom: 6rem;
+    }
+    @include respond(phone) {
+        margin-bottom: 5rem;
+    }
 }
 
 .parpadea {
@@ -33,6 +47,10 @@
     display: inline-block; //junta el texto con el background-image
     color: transparent;//para que se vea el color del gradiente
     letter-spacing: .8rem;
+
+    @include respond(tab-port) {
+        font-size: 3rem;
+    }
 }
   
 @keyframes parpadeo {  

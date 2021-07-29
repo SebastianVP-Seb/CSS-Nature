@@ -692,8 +692,59 @@ recomendable usar: opacity: 0;
                     visibility: hidden;
 
 
+====================================================
+          Para responsive design
+====================================================
 
+Primero se comienza a construir el sitio para móvil o desktop, luego se usan media queries para
+ajustar el tamaño y que funcione en ambas pantallas, también se seleccionan puntos para estos medios.
+En desktop: se optimiza el código para pantallas grandes, luego los media queries intervienen para
+las pantallas pequeñas, prueban el ancho máximo.
+@media(max-width:600px)
+Si se comienza con la versión móvil, se crea para pantallas pequeñas y luego se optimiza para 
+pantallas grandes. aquí se prueba el ancho mínimo
+@media(min-width:600px)
 
+max-width para desktop first
+min-width para mobile first
+
+Desktop-first: max-width:600px -> verifica si la pantalla es menor o igual a 600px, si lo es: aplicará
+lo que en esa media querie esté, sino ese código no se apllicará. El máximo ancho al que el código
+se ejecutará. Anularán ciertas partes del código, y el código global css se aplicará. 
+Si luego se define un máximo de 900px y se tiene una pantalla de 500px, se aplicarán ambas media queries,
+porque en ambos casos, 500px será menor que 600 y 900 px, por lo que es ! definir bien la cascada y 
+no tener problemas por ejemplo en el tamaño de fuente (la que aparece menos en el código es la
+que tiene prioridad).
+Los media queries no agregan importancia o especificidad a los selectores, por lo que el orden
+del código importa. Entonces: poner las media queries siempre hasta el final.
+
+Mobile-first: aquí se tienen min-width queries min-width:600px -> verifica si el ancho es mayor 
+o igual a 600px, si sí, el código se aplica. 600 sería el mínimo para que la media querie se aplique.
+
+Los breakpoints son el ancho de la pantalla al que queremos que cambie el diseño (donde se
+ponene las media queries "consultas de medios")
+
+Para establecerlos: ver el internet cuál es el ancho de dispositivos más utilizado
+o establecerlos cuando al cambiar el ancho, el diseño se rompa.
+
+Para este proyecto, escribiremos los media queries como mixins, en el archivo mixins.
+
+En "em" y "rem" en media queries no se ven afectados por una configuración de tamaño de fuente, 
+debido a la configuración que se tiene en el bloque de html ( font-size: 62.5%; ). Por lo que 
+un em y un rem siempre es igual al tamaño de fuente que proviene del navegador (16px por defecto).
+Es preferible usar ems que rems (1em=16px).
+
+Al final siempre se ponen las dimensiones pequeñas de media queries
+
+Para la sección book, rediseñar la tarjeta para eliminar el hover y poner el precio en la
+parte inferior de la tarjeta.
+
+======================================
+Responsive images
+===============================
+Las imágenes de mayor tamaño (peso) se envían a las pantallas grandes. Y las imágenes de menor 
+dimensión a las pantallas pequeñas. No tiene sentido enviar una umagen de 1Mb a un cel, convendría
+una imagen de 200kb
 
 
 

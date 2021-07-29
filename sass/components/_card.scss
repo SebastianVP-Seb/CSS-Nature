@@ -145,4 +145,89 @@
     &_btn-font {
         font-family: 'Italiana', serif;
     }
+
+    @include respond(tab-port) {
+    
+        height: auto;//para evitar el colapso de las tarjetas (misma altuta que _side)
+        border-radius: .9rem;
+        // background-color: azure;
+        background-image: linear-gradient(to right, #a1ffce, #faffd1);
+        box-shadow: 0 .3rem 4rem rgba($color-black, .2);
+
+        &_side {
+            background-color: azure;
+            height: auto;
+            box-shadow: none;
+
+            position: relative;//se cambia a relative para que los dos lados de la tarjeta ya no 
+            //ocupen el mismo espacio
+            
+
+        &-back {
+            transform: rotateY(0);
+            clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
+            background-color: azure;
+
+            &-1 {
+                background-image: linear-gradient(to right, #ee0979, #ff6a00);
+            }
+        
+            &-2 {
+                background-image: linear-gradient(to right, #0cebeb, #20e3b2, #29ffc6);
+            }
+        
+            &-3 {
+                background-image: linear-gradient(to right, #ef32d9, #89fffd);
+            }
+        }
+    }
+
+        &:hover &_side-front {//cuando se haga el hover, side se transformará
+            transform: rotateY(0);
+        }
+
+        &:hover &_side-back {//cuando se haga el hover, side se transformará
+            transform: rotateY(0);
+            box-shadow: 0 .5rem 4rem rgba($color-black, .8);
+        }
+
+        &_heading-span {
+            padding: .3rem .5rem;
+            -webkit-box-decoration-break: clone;//Para que el padding se vea al inicio y al final del texto
+            box-decoration-break: clone;
+
+            &-1 {
+                background-image: linear-gradient(to right, rgba( #ee0979,.6), rgba(#ff6a00,.6));
+            }
+
+            &-2 {
+                background-image: linear-gradient(to right, rgba(#00c9ff,.6), rgba( #92fe9d,.6));
+            }
+
+            &-3 {
+                background-image: linear-gradient(to right, rgba(#fc00ff,.6), rgba( #00dbde,.6));
+            }
+        }
+
+        //Lado posterior, hijo de card_side
+        &_back {
+            position: relative;
+            top: 0;
+            left:0;
+            transform: translate(0);
+            width: 100%;
+            font-family: 'Italiana', serif;
+            padding: 6rem 4rem 4rem 4rem;
+
+            
+        }
+
+        &_price-only {
+            font-size: 1.4rem;
+        }
+
+        &_price-value {
+            font-size: 6rem;
+        }
+    }
 }

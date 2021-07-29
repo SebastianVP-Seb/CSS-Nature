@@ -11,9 +11,21 @@
         transition: all .5s;
         outline-offset: 1rem;
 
+        @include respond(tab-port) {
+            // float: left;
+            // position: relative;
+            box-shadow: 0 1rem 2.5rem rgba($color-black,25%);
+        }
+        @include respond(phone) {
+            // float: left;
+            // position: relative;
+            box-shadow: 0 1rem 2rem rgba($color-black,20%);
+        }
+
         &--f1 {
             top:-3rem;
             left: 0;
+            
         }
 
         &--f2 {

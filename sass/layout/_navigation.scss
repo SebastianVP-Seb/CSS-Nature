@@ -17,6 +17,20 @@
         box-shadow: 0 1rem 2rem $color-black;
 
         text-align: center;//para centrar el menú hamburguesa
+
+        // @include respond(tab-land) {
+        //     height: 5.5rem;
+        //     width: 5.5rem;
+        //     top: 1.5rem;
+        //     right: 1.5rem;
+        // }
+
+        @include respond(tab-port) {
+            height: 7.5rem;
+            width: 7.5rem;
+            top: 1.5rem;
+            right: 1.5rem;
+        }
     }
 
     &_background {
@@ -32,6 +46,16 @@
         z-index: 100;//para que no se esconda tras los elementos ya creados al hacer scroll
         // transform: scale(37);//Para ver como crece el círculo (probando)
         transition: all .8s;
+
+        @include respond(tab-port) {
+            top: 2.3rem;
+            right: 2.2rem;
+        }
+
+        @include respond(phone) {
+            top: 2.3rem;
+            right: 2.2rem;
+        }
     }
 
     &_nav {//debe cubrir el 100%vh
@@ -59,6 +83,7 @@
 
     &_item {
         margin: 1rem;
+        width: 100%;
     }
 
     &_link {
@@ -76,6 +101,10 @@
             background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-black 50%);
             background-size: 220%;
             transition: all .7s;
+
+            @include respond(tab-port) {
+                font-size: 2rem;
+            }
         }
 
         &:hover,
@@ -85,6 +114,7 @@
             text-shadow: 0 .5rem .5rem white;
             transform: translateY(-1rem);//para que funcione bien, los elementos se deben desplegar 
                         //inline.block
+            width: 100%;
         }
     }
 
@@ -92,7 +122,7 @@
     //Con el selector de hermanos se selecciona el background, ya que no es el adyacente no se
     //puede usar el +
     &_checkbox:checked ~ &_background {
-        transform: scale(37);
+        transform: scale(47);
     }
     
     &_checkbox:checked ~ &_nav {//para que aparezca el contenido del menú hamburguesa

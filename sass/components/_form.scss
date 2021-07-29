@@ -1,7 +1,7 @@
 .form {
 
     &_input {
-        width: 90%;
+        width: 70%;
         display: block;
         font-size: 1.5rem;
         font-family: 'Risque', cursive;
@@ -12,6 +12,14 @@
         border-bottom: .2rem solid transparent;
         transition: all 1s;//Para darle la animación al cambio de color del border-bottom
 
+        @include respond(tab-port) {
+            width: 100%;
+        }
+
+        @include respond(phone) {
+            width: 100%;
+        }
+        
         &:focus {
             outline: none;
             box-shadow: 0 1rem 2rem rgba($color-black, .7);
@@ -55,8 +63,8 @@
         position: relative;
         transform: translateY(.5rem);
         -webkit-appearance: none;
-        width: 7rem;
-        height: 2rem;
+        width: 9rem;
+        height: 4rem;
         border-radius: 2rem;
         outline: none;
         box-shadow: //-.5rem -.5rem 2rem rgba(165, 42, 42, 0.726), 
@@ -78,8 +86,8 @@
             position: absolute;
             top: 0%;
             left: 0%;
-            width: 4.5rem;
-            height: 2rem;
+            width: 6.5rem;
+            height: 4rem;
             border-radius: 2rem;
             background-color: rgba(27, 26, 26, 0.926);
             
@@ -94,10 +102,10 @@
         &::after {
             content: "";
             position: absolute;
-            width: .5rem;
-            height: .5rem;
+            width: 1.5rem;
+            height: 1.5rem;
             border-radius: 50%;
-            top: 40%;
+            top: 30%;
             left: 35%;
             transition: .5s;
         }
@@ -156,14 +164,17 @@
             margin-right: 1.2rem;
             display: inline-block;//Para que se puedan usar las medidas de height y width
         }
-        
     }//Fin del tutorial 2---------------------------------------------
     
 
     &_radio-group {
-        // width: 47%;//Este es para el grupo de botones 1------------------------
+        width: 100%;//Este es para el grupo de botones 1------------------------
         display: inline-block;//Pone los botones uno al lado del otro
-        width: 49%;//Este se usa para los botones de la clase
+        // width: 47%;//Este se usa para los botones de la clase
+
+        // @include respond(tab-port) {
+        //     width: 100%;
+        // }
     }
 
     &_radio-input {
@@ -185,7 +196,8 @@
         width: 3rem;
         border: .5rem solid rgba($color-black, .7);
         border-radius: 50%;
-        display: inline-block;//Para que tome las medidas de height y width
+        // display: inline-block;//Para que tome las medidas de height y width
+        display: none;//activar para el grupo de botones 1
         position: absolute;
         top: -.6rem;
         left: 0;

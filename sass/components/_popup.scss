@@ -15,6 +15,10 @@
 
     transition: all 1s;
 
+    @include respond(tab-port) {
+        display: table-cell;
+    }
+
     &:target {
         opacity: 1;
         visibility: visible;
@@ -70,6 +74,11 @@
     &_left {
         width: 33.333333333333333%;
         display: table-cell;
+
+        @include respond(tab-port) {
+            // width: 50%;
+            display: none;
+        }
     }
     
     &_img {
@@ -82,6 +91,11 @@
         display: table-cell;
         vertical-align: middle;//bottom, top
         padding: 2rem 3rem;
+
+        // @include respond(tab-port) {
+        //     width: 50%;
+        //     display: table-cell;
+        // }
     }
 
     &_text {
@@ -98,6 +112,11 @@
     &_center {
         width: 33.333333333333333%;
         display: table-cell;
+
+        @include respond(tab-port) {
+            // width: 50%;
+            display: none;
+        }
     }
 
     &_graf3 {
