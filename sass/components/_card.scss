@@ -146,9 +146,14 @@
         font-family: 'Italiana', serif;
     }
 
-    @include respond(tab-port) {
+    // @include respond(tab-port) { se comenta para agregar la condición de que cuando sea pantalla
+    //     pequeña, la parte trasera de la tarjeta pase al frente. Ya que en pantallas pequeñas no 
+    //     se puede hacer hover. Y también si se tiene un dispositivo táctil activado (hover none)
+    @media only screen and (max-width: 55rem),
+        only screen and (hover: none) {
+            //hover:hover para indicar que hay mouse
     
-        height: auto;//para evitar el colapso de las tarjetas (misma altuta que _side)
+        height: auto;//para evitar el colapso de las tarjetas (misma altura que _side)
         border-radius: .9rem;
         // background-color: azure;
         background-image: linear-gradient(to right, #a1ffce, #faffd1);

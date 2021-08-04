@@ -53,7 +53,7 @@
         
         </style>
 
-        <link rel="stylesheet" href="css/icofont.css">
+        <!-- <link rel="stylesheet" href="css/icofont.css"> -->
         <link rel="stylesheet" href="css/style2.css">
         <link rel="shortcut icon" type="image/png" href="img/favicon.png">
         
@@ -125,6 +125,16 @@
                     <div class="col-1-of-2">
                         <!-- Content images -->
                         <div class="composition">
+
+                            <!--Para las imágenes responsivas, sólo se hará el ejemplo
+                            vw: viewport-width, los 300px es un valor por defecto. se le indica
+                        el ancho de las imágenes (300w). 20vw=171/900px (es el % que ocupa la
+                        imagen en relación con el ancho total de la pantalla)-->
+
+                            <!-- <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 100w" 
+                                 sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px"
+                            alt="Photo-1"> -->
+
                             <img src="img/ubpdOMR3D-M.jpg" alt="IMG1" class="composition_photo composition_photo--f1">
                             <img src="img/WrlcEBpjouY.jpg" alt="IMG2" class="composition_photo composition_photo--f2">
                             <img src="img/aADJI_1kkDM.jpg" alt="IMG3" class="composition_photo composition_photo--f3">
@@ -412,7 +422,16 @@
 
         <footer class="footer">
             <div class="footer_logo--box">
-                <img src="img/logo-green-2x.png" alt="logo big" class="footer_logo">
+
+                <picture class="footer_logo">
+                    <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" media="(max-width: 37.5rem)">
+                    <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="logo big">
+
+                </picture>
+
+                <!--Para img responsive con cambio de resolución
+                    <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="logo big">-->
+
             </div>
             <div class="row">
                 <div class="col-1-of-2">

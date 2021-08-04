@@ -1,4 +1,8 @@
 .header {
+
+    //Para que funcione clip-path en Firefox
+    // @supports 
+
     height: 95vh;
     background-image: linear-gradient(
         to left top,

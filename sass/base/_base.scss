@@ -45,3 +45,9 @@ body {
         padding: 0;
     }
 }
+
+//Para cambiar el color del subrayado del texto seleccionado
+::selection {
+    background-color: aqua;
+    color: hotpink;
+}

@@ -740,12 +740,88 @@ Para la sección book, rediseñar la tarjeta para eliminar el hover y poner el p
 parte inferior de la tarjeta.
 
 ======================================
-Responsive images
+        Responsive images
 ===============================
 Las imágenes de mayor tamaño (peso) se envían a las pantallas grandes. Y las imágenes de menor 
 dimensión a las pantallas pequeñas. No tiene sentido enviar una umagen de 1Mb a un cel, convendría
-una imagen de 200kb
+una imagen de 200kb, consumiría más datos. Relacionado con el rendimiento web. "Servir la imagen correcta en el 
+dispositivo correcto".
 
+Casos de aplicación para imágenes responsivas:
+
+1.- Cambio de resolución: decrementa la resolución de las imágenes en las pantallas pequeñas.
+  (misma imagen con versión pequeña).
+
+2.- Cambio de densidad: densidad de pixeles (1px son 2px en pantalla de alta resolución)
+  Es la q de pixeles que se encuentran en 1cm o en 1pulg de pantalla.
+  baja-resolución: 1x    alta-resolución: 2x
+
+3.- Dirección de arte: usar diferentes imágenes en diferentes pantallas
+
+============
+Hay imágenes en html y en css.
+---Para el cambio de densidad---
+Para la imagen del logo en el footer, en el html cambiar el src por srcset y ahora se pueden
+especificar dos imágenes y añadiendo 1x o 2x para imágenes de alta resolución. Las imágenes se separan
+por ",". Automáticamente el navegador determinará cuál imagen usar en función de la pantalla en 
+la que esté el usuario.
+---Para dirección de arte---
+Usar diferentes imágenes en función del ancho de pantalla que esté usando el usuario.
+En el html se usa la etiqueta "picture". Se especifica source con srcset y img usando srcset; 
+y al igual que con media queries se manda a llamar la imagen que se desee. Se pueden poner 
+varios source. Si el ancho de la pantalla es menor a 600px, usará las imágenes del source, sino
+usará las imágenes de la etiqueta srcset
+---Para el cambio de densidad y reesolución---
+Utilizando las 4 imágenes se section-about, de la clase "composition".
+El navegador elegirá la densidad adecuada de la imagen.
+width descriptor: informarle al navegador el ancho de las imágenes, ej: 300w
+Agregar el atributo sizes: le informa al navegador el diferente ancho de las imágenes en diferentes
+anchos de pantalla (se le pasan los breakpoints) y el porcentaje del ancho de la imagen en 
+relación con el ancho total de la pantalla (171/900=20%).
+Se puede usar la pág "canIuse" para verificar si algunos comandos son soportados en los navegadores
+
+//@supports. Agregar en el archivo _popup.
+Escribir un support en el archivo header, porque clip-path no funciona en Firefox
+
+=======================================
+Proceso de construcción con NPM scripts
+
+Compilation -> Concatenation -> Prefixing -> Compressing
+
+Esto se hace en el package.json. Cambiar el script watch:sass. "comp" es de compilado.
+Volver a ejecutar: npm run compile:sass -> automáticamente creará un nuevo archivo con la
+extensión comp.
+Concatenar múltiples archivos css; en la terminal: npm install concat --save-dev
+En el package primero se pone el nombre del archivo final y luego los archivos que se van a concatenar
+(para esto se pone el archivo del renglón de arriba)
+Ejecutar en la tarminal: npm run concat:css -> automáticamente se crea el archivo que se puso primero
+en este script. Con esto, se tienen concatenados los archivo css.
+Para prefexing: npm install autoprefixer --save-dev
+                npm install postcss-cli --save-dev
+    npm run prefix:css
+CompressCSS -> el archivo final se llega a llamar como el archivo del principio.
+Ahora se puede comentar en el html el llamado del archivo de los íconos
+                npm run compress:css
+Esto crea el archivo final "style2.css" un sólo archivo con una sóla línea de código, son los 
+espacios en blanco
+build:css ejecutarpa los scripts anteriores y se tendrá listo el css de producción
+npm install npm-run-all --save-dev
+Se pueden eliminar todos los archivos y luego ejecutar el comando: npm run build:css
+Agregar los scripts devserver y start. parallel se agrega para que se ejecuten al mismo tiempo.
+Finalmente ejecutar: npm run start
+
+Para cambiar el color del subrayado del texto seleccionado:
+En el archivo base
+Luego, a las media queries agregar: only screen and (en el archivo mixins).
+En el archivo card, agregar una media query para que la parte posterior de la tarjeta se muestre 
+cuando el dispositivo no cuenta con mouse, ya que no se puede hacer hover en una tablet o en 
+un celular.
+
+Finalmente, para correr el proyecto es: 
+npm run start, para activar junto con live server ó 
+npm run build:css, para que vuelvan a aparecer los íconos
+Recordar instalar los módulos de node con:
+npm install
 
 
 
